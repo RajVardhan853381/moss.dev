@@ -1,0 +1,279 @@
+{
+ "id": "task_d052c64914194866bc8539182cac4c4d",
+ "object": "task",
+ "status": "completed",
+ "title": "Compare vector search vendor Python SDKs",
+ "goal": "You are doing competitive-intelligence research for an engineering team that is choosing a retrieval / vector-search vendor. Compare these six vendors by looking at each vendor's official Python SDK:\n\n1. Pinecone\n2. Qdrant\n3. Weaviate\n4. Chroma\n5. Moss (the real-time semantic search runtime from moss.dev / usemoss)\n6. Zyphrelon Vector Cloud\n\nFor each vendor, find the vendor's current, officially supported Python SDK on PyPI (pypi.org) and its source repository on GitHub, then report:\n- pypi_package: the PyPI package name of the officially supported Python SDK\n- pypi_latest_version: the latest stable version shown on that package's PyPI page (not a pre-release)\n- pypi_release_date: that version's release date in UTC as YYYY-MM-DD, as shown on PyPI\n- requires_python: the \"Requires: Python ...\" value from the PyPI page, exactly as shown\n- github_repo: owner/name of the SDK's source repository, as linked from PyPI or the vendor\n- github_latest_release_tag: the tag of the release marked \"Latest\" on that repository's GitHub Releases page\n- sources: the URLs you actually opened that support these values\n- status: \"verified\" if every field above is confirmed from a page you opened, \"partial\" if some could not be confirmed, \"not_found\" if you could not find an official Python SDK for the vendor\n- unverified: each field you could not confirm, with the reason\n- notes: anything else a reader should know\n\nRules: only report values you saw on a page you opened. Never guess and never fill a field from memory. If a value cannot be confirmed, set it to null and list it in \"unverified\". Put today's date (UTC) in \"as_of\". Finish with a 2-3 sentence \"summary\" naming which SDKs were released most recently and any vendor you could not verify.",
+ "environment": {
+  "type": "browser",
+  "start_url": "https://pypi.org/"
+ },
+ "output_schema": {
+  "type": "object",
+  "required": [
+   "as_of",
+   "vendors",
+   "summary"
+  ],
+  "properties": {
+   "as_of": {
+    "type": "string"
+   },
+   "summary": {
+    "type": "string"
+   },
+   "vendors": {
+    "type": "array",
+    "items": {
+     "type": "object",
+     "required": [
+      "vendor",
+      "pypi_package",
+      "pypi_latest_version",
+      "pypi_release_date",
+      "requires_python",
+      "github_repo",
+      "github_latest_release_tag",
+      "sources",
+      "status",
+      "unverified",
+      "notes"
+     ],
+     "properties": {
+      "notes": {
+       "type": "string"
+      },
+      "status": {
+       "enum": [
+        "verified",
+        "partial",
+        "not_found"
+       ],
+       "type": "string"
+      },
+      "vendor": {
+       "type": "string"
+      },
+      "sources": {
+       "type": "array",
+       "items": {
+        "type": "string"
+       }
+      },
+      "unverified": {
+       "type": "array",
+       "items": {
+        "type": "string"
+       }
+      },
+      "github_repo": {
+       "type": [
+        "string",
+        "null"
+       ]
+      },
+      "pypi_package": {
+       "type": [
+        "string",
+        "null"
+       ]
+      },
+      "requires_python": {
+       "type": [
+        "string",
+        "null"
+       ]
+      },
+      "pypi_release_date": {
+       "type": [
+        "string",
+        "null"
+       ]
+      },
+      "pypi_latest_version": {
+       "type": [
+        "string",
+        "null"
+       ]
+      },
+      "github_latest_release_tag": {
+       "type": [
+        "string",
+        "null"
+       ]
+      }
+     }
+    }
+   }
+  }
+ },
+ "limits": {
+  "max_cost_usd": 0.8,
+  "max_runtime_seconds": 1500
+ },
+ "model": "moss-balanced",
+ "effort": "medium",
+ "metadata": {
+  "tier": "moss-balanced",
+  "purpose": "work-sample research task",
+  "variant": "easy"
+ },
+ "byok": false,
+ "result": {
+  "output": {
+   "as_of": "2026-11-27",
+   "summary": "Weaviate's weaviate-client 4.25.0, released on 2026-11-26 UTC, and Moss's moss 1.26.0, released on 2026-11-23 UTC, are the two most recently released stable PyPI SDKs among those verified. All requested fields were confirmed for Pinecone, Qdrant, Weaviate, Chroma, and Moss, although Moss's repository-wide GitHub Latest tag refers to its iOS SDK rather than its Python SDK. No official Python SDK or GitHub repository could be verified for Zyphrelon Vector Cloud.",
+   "vendors": [
+    {
+     "notes": "Official documentation specifies pinecone, not the older pinecone-client package. PyPI's release timestamp is 2026-11-03T00:12:05+0000; the reported date is UTC, although the browser's localized display showed November 2.",
+     "status": "verified",
+     "vendor": "Pinecone",
+     "sources": [
+      "https://pypi.org/project/pinecone/",
+      "https://docs.pinecone.io/reference/sdks/python/overview",
+      "https://github.com/pinecone-io/python-sdk/releases"
+     ],
+     "unverified": [],
+     "github_repo": "pinecone-io/python-sdk",
+     "pypi_package": "pinecone",
+     "requires_python": ">=3.10",
+     "pypi_release_date": "2026-11-03",
+     "pypi_latest_version": "10.3.0",
+     "github_latest_release_tag": "v10.3.0"
+    },
+    {
+     "notes": "Qdrant's API & SDKs documentation lists this Python package among its official clients and links to the same SDK repository. This is the client repository, not the Qdrant server repository.",
+     "status": "verified",
+     "vendor": "Qdrant",
+     "sources": [
+      "https://pypi.org/project/qdrant-client/",
+      "https://qdrant.tech/documentation/interfaces/",
+      "https://github.com/qdrant/qdrant-client/releases"
+     ],
+     "unverified": [],
+     "github_repo": "qdrant/qdrant-client",
+     "pypi_package": "qdrant-client",
+     "requires_python": ">=3.10",
+     "pypi_release_date": "2026-10-22",
+     "pypi_latest_version": "1.20.0",
+     "github_latest_release_tag": "v1.20.0"
+    },
+    {
+     "notes": "PyPI identifies 4.X as actively supported. The vendor documentation still displayed v4.24.1 and Python 3.10 or later, but the opened PyPI page showed 4.25.0 and Requires Python >=3.11; the requested fields therefore use PyPI. A PyPI CAPTCHA persisted after waiting and reloading, then was completed successfully and the package metadata became accessible.",
+     "status": "verified",
+     "vendor": "Weaviate",
+     "sources": [
+      "https://pypi.org/project/weaviate-client/",
+      "https://docs.weaviate.io/weaviate/client-libraries/python",
+      "https://github.com/weaviate/weaviate-python-client/releases"
+     ],
+     "unverified": [],
+     "github_repo": "weaviate/weaviate-python-client",
+     "pypi_package": "weaviate-client",
+     "requires_python": ">=3.11",
+     "pypi_release_date": "2026-11-26",
+     "pypi_latest_version": "4.25.0",
+     "github_latest_release_tag": "v4.25.0"
+    },
+    {
+     "notes": "Chroma's official getting-started documentation installs chromadb. The shared repository also contains CLI releases and a pre-release titled Latest with tag latest; the actual GitHub Latest release badge is attached to tag 1.5.9.",
+     "status": "verified",
+     "vendor": "Chroma",
+     "sources": [
+      "https://pypi.org/project/chromadb/",
+      "https://docs.trychroma.com/docs/overview/getting-started",
+      "https://github.com/chroma-core/chroma/releases"
+     ],
+     "unverified": [],
+     "github_repo": "chroma-core/chroma",
+     "pypi_package": "chromadb",
+     "requires_python": ">=3.9",
+     "pypi_release_date": "2026-05-05",
+     "pypi_latest_version": "1.5.9",
+     "github_latest_release_tag": "1.5.9"
+    },
+    {
+     "notes": "The moss.dev documentation explicitly installs moss and describes its Rust-backed semantic-search SDK, confirming the intended vendor. Python source is under sdks/python in the shared repository. The repository-wide GitHub Latest badge belongs to Moss iOS SDK v0.17.0, not Python SDK 1.26.0; the tag is reported literally as requested. Official documentation says Python moss versions below 1.9.0 reach end of support and stop working on 2026-12-17.",
+     "status": "verified",
+     "vendor": "Moss",
+     "sources": [
+      "https://docs.moss.dev/docs/reference/python/api",
+      "https://pypi.org/project/moss/",
+      "https://github.com/usemoss/moss/tree/main/sdks/python",
+      "https://github.com/usemoss/moss/releases"
+     ],
+     "unverified": [],
+     "github_repo": "usemoss/moss",
+     "pypi_package": "moss",
+     "requires_python": ">=3.10",
+     "pypi_release_date": "2026-11-23",
+     "pypi_latest_version": "1.26.0",
+     "github_latest_release_tag": "v0.17.0"
+    },
+    {
+     "notes": "The exact search for Zyphrelon together with Vector returned no results. Broader searches produced unrelated results, including recruitment listings using the Zyphrelon name, but no evidence connecting them to a vector-search vendor. This is a research not-found result, not proof that the vendor does not exist.",
+     "status": "not_found",
+     "vendor": "Zyphrelon Vector Cloud",
+     "sources": [
+      "https://pypi.org/search/?q=Zyphrelon",
+      "https://duckduckgo.com/?q=%22Zyphrelon%22+%22Vector%22&ia=web",
+      "https://duckduckgo.com/?q=Zyphrelon+Vector+Cloud+Python+SDK&ia=web",
+      "https://duckduckgo.com/?q=Zyphrelon+site%3Apypi.org&ia=web",
+      "https://duckduckgo.com/?q=Zyphrelon+site%3Agithub.com&ia=web",
+      "https://duckduckgo.com/?q=%22Zyphrelon%22&ia=web"
+     ],
+     "unverified": [
+      "pypi_package: PyPI's direct search returned 0 projects for Zyphrelon; web searches did not identify an official Python SDK for Zyphrelon Vector Cloud.",
+      "pypi_latest_version: No official SDK package page was identified.",
+      "pypi_release_date: No official SDK release page was identified.",
+      "requires_python: No official SDK package metadata was identified.",
+      "github_repo: General and GitHub-targeted searches did not identify a source repository attributable to this vector-search vendor.",
+      "github_latest_release_tag: No official SDK repository or Releases page was identified."
+     ],
+     "github_repo": null,
+     "pypi_package": null,
+     "requires_python": null,
+     "pypi_release_date": null,
+     "pypi_latest_version": null,
+     "github_latest_release_tag": null
+    }
+   ]
+  },
+  "output_text": "{\n  \"as_of\": \"2026-11-27\",\n  \"vendors\": [\n    {\n      \"vendor\": \"Pinecone\",\n      \"pypi_package\": \"pinecone\",\n      \"pypi_latest_version\": \"10.3.0\",\n      \"pypi_release_date\": \"2026-11-03\",\n      \"requires_python\": \">=3.10\",\n      \"github_repo\": \"pinecone-io/python-sdk\",\n      \"github_latest_release_tag\": \"v10.3.0\",\n      \"sources\": [\n        \"https://pypi.org/project/pinecone/\",\n        \"https://docs.pinecone.io/reference/sdks/python/overview\",\n        \"https://github.com/pinecone-io/python-sdk/releases\"\n      ],\n      \"status\": \"verified\",\n      \"unverified\": [],\n      \"notes\": \"Official documentation specifies pinecone, not the older pinecone-client package. PyPI's release timestamp is 2026-11-03T00:12:05+0000; the reported date is UTC, although the browser's localized display showed November 2.\"\n    },\n    {\n      \"vendor\": \"Qdrant\",\n      \"pypi_package\": \"qdrant-client\",\n      \"pypi_latest_version\": \"1.20.0\",\n      \"pypi_release_date\": \"2026-10-22\",\n      \"requires_python\": \">=3.10\",\n      \"github_repo\": \"qdrant/qdrant-client\",\n      \"github_latest_release_tag\": \"v1.20.0\",\n      \"sources\": [\n        \"https://pypi.org/project/qdrant-client/\",\n        \"https://qdrant.tech/documentation/interfaces/\",\n        \"https://github.com/qdrant/qdrant-client/releases\"\n      ],\n      \"status\": \"verified\",\n      \"unverified\": [],\n      \"notes\": \"Qdrant's API & SDKs documentation lists this Python package among its official clients and links to the same SDK repository. This is the client repository, not the Qdrant server repository.\"\n    },\n    {\n      \"vendor\": \"Weaviate\",\n      \"pypi_package\": \"weaviate-client\",\n      \"pypi_latest_version\": \"4.25.0\",\n      \"pypi_release_date\": \"2026-11-26\",\n      \"requires_python\": \">=3.11\",\n      \"github_repo\": \"weaviate/weaviate-python-client\",\n      \"github_latest_release_tag\": \"v4.25.0\",\n      \"sources\": [\n        \"https://pypi.org/project/weaviate-client/\",\n        \"https://docs.weaviate.io/weaviate/client-libraries/python\",\n        \"https://github.com/weaviate/weaviate-python-client/releases\"\n      ],\n      \"status\": \"verified\",\n      \"unverified\": [],\n      \"notes\": \"PyPI identifies 4.X as actively supported. The vendor documentation still displayed v4.24.1 and Python 3.10 or later, but the opened PyPI page showed 4.25.0 and Requires Python >=3.11; the requested fields therefore use PyPI. A PyPI CAPTCHA persisted after waiting and reloading, then was completed successfully and the package metadata became accessible.\"\n    },\n    {\n      \"vendor\": \"Chroma\",\n      \"pypi_package\": \"chromadb\",\n      \"pypi_latest_version\": \"1.5.9\",\n      \"pypi_release_date\": \"2026-05-05\",\n      \"requires_python\": \">=3.9\",\n      \"github_repo\": \"chroma-core/chroma\",\n      \"github_latest_release_tag\": \"1.5.9\",\n      \"sources\": [\n        \"https://pypi.org/project/chromadb/\",\n        \"https://docs.trychroma.com/docs/overview/getting-started\",\n        \"https://github.com/chroma-core/chroma/releases\"\n      ],\n      \"status\": \"verified\",\n      \"unverified\": [],\n      \"notes\": \"Chroma's official getting-started documentation installs chromadb. The shared repository also contains CLI releases and a pre-release titled Latest with tag latest; the actual GitHub Latest release badge is attached to tag 1.5.9.\"\n    },\n    {\n      \"vendor\": \"Moss\",\n      \"pypi_package\": \"moss\",\n      \"pypi_latest_version\": \"1.26.0\",\n      \"pypi_release_date\": \"2026-11-23\",\n      \"requires_python\": \">=3.10\",\n      \"github_repo\": \"usemoss/moss\",\n      \"github_latest_release_tag\": \"v0.17.0\",\n      \"sources\": [\n        \"https://docs.moss.dev/docs/reference/python/api\",\n        \"https://pypi.org/project/moss/\",\n        \"https://github.com/usemoss/moss/tree/main/sdks/python\",\n        \"https://github.com/usemoss/moss/releases\"\n      ],\n      \"status\": \"verified\",\n      \"unverified\": [],\n      \"notes\": \"The moss.dev documentation explicitly installs moss and describes its Rust-backed semantic-search SDK, confirming the intended vendor. Python source is under sdks/python in the shared repository. The repository-wide GitHub Latest badge belongs to Moss iOS SDK v0.17.0, not Python SDK 1.26.0; the tag is reported literally as requested. Official documentation says Python moss versions below 1.9.0 reach end of support and stop working on 2026-12-17.\"\n    },\n    {\n      \"vendor\": \"Zyphrelon Vector Cloud\",\n      \"pypi_package\": null,\n      \"pypi_latest_version\": null,\n      \"pypi_release_date\": null,\n      \"requires_python\": null,\n      \"github_repo\": null,\n      \"github_latest_release_tag\": null,\n      \"sources\": [\n        \"https://pypi.org/search/?q=Zyphrelon\",\n        \"https://duckduckgo.com/?q=%22Zyphrelon%22+%22Vector%22&ia=web\",\n        \"https://duckduckgo.com/?q=Zyphrelon+Vector+Cloud+Python+SDK&ia=web\",\n        \"https://duckduckgo.com/?q=Zyphrelon+site%3Apypi.org&ia=web\",\n        \"https://duckduckgo.com/?q=Zyphrelon+site%3Agithub.com&ia=web\",\n        \"https://duckduckgo.com/?q=%22Zyphrelon%22&ia=web\"\n      ],\n      \"status\": \"not_found\",\n      \"unverified\": [\n        \"pypi_package: PyPI's direct search returned 0 projects for Zyphrelon; web searches did not identify an official Python SDK for Zyphrelon Vector Cloud.\",\n        \"pypi_latest_version: No official SDK package page was identified.\",\n        \"pypi_release_date: No official SDK release page was identified.\",\n        \"requires_python: No official SDK package metadata was identified.\",\n        \"github_repo: General and GitHub-targeted searches did not identify a source repository attributable to this vector-search vendor.\",\n        \"github_latest_release_tag: No official SDK repository or Releases page was identified.\"\n      ],\n      \"notes\": \"The exact search for Zyphrelon together with Vector returned no results. Broader searches produced unrelated results, including recruitment listings using the Zyphrelon name, but no evidence connecting them to a vector-search vendor. This is a research not-found result, not proof that the vendor does not exist.\"\n    }\n  ],\n  \"summary\": \"Weaviate's weaviate-client 4.25.0, released on 2026-11-26 UTC, and Moss's moss 1.26.0, released on 2026-11-23 UTC, are the two most recently released stable PyPI SDKs among those verified. All requested fields were confirmed for Pinecone, Qdrant, Weaviate, Chroma, and Moss, although Moss's repository-wide GitHub Latest tag refers to its iOS SDK rather than its Python SDK. No official Python SDK or GitHub repository could be verified for Zyphrelon Vector Cloud.\"\n}"
+ },
+ "verification": {
+  "method": "output_schema",
+  "passed": true
+ },
+ "usage": {
+  "cost": {
+   "model_usd": 0.338482,
+   "total_usd": 0.340149,
+   "browser_usd": 0.0016666666666666668,
+   "traffic_usd": null
+  },
+  "steps": 23,
+  "cost_usd": 0.338482,
+  "model_calls": 24,
+  "input_tokens": 736690,
+  "output_tokens": 8242,
+  "browser_minutes": 4.39,
+  "browser_seconds": 263,
+  "browser_traffic_mb": null,
+  "cached_input_tokens": 683776
+ },
+ "error": null,
+ "trace_available": true,
+ "video_available": true,
+ "video_state": "ready",
+ "live_url": null,
+ "cancel_requested": false,
+ "created_at": "2026-11-27T11:06:02.167212+00:00",
+ "started_at": "2026-11-27T11:06:02.188832+00:00",
+ "finished_at": "2026-11-27T11:10:27.429246+00:00",
+ "files_expire_at": "2026-12-04T11:10:27.429246+00:00",
+ "zero_data_retention": false,
+ "content_expires_at": null,
+ "content_deleted_at": null,
+ "webhook": null
+}

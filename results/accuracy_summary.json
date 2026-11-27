@@ -1,0 +1,42 @@
+{
+ "fastlane + clean index (moss-docs-md)": {
+  "accuracy": 0.8478260869565217,
+  "n_qa": 46,
+  "correct": 39,
+  "abstain_rate": 1.0,
+  "n_control": 6,
+  "ttft_p50": 263.0179564998798,
+  "retrieve_p50": 12.5,
+  "input_tokens_p50": 1198.0
+ },
+ "fastlane, no index": {
+  "accuracy": 0.0,
+  "n_qa": 46,
+  "correct": 0,
+  "abstain_rate": 1.0,
+  "n_control": 6,
+  "ttft_p50": 213.19624950001526,
+  "retrieve_p50": 0.0,
+  "input_tokens_p50": 166.0
+ },
+ "fastlane + crawler-built index (moss-docs)": {
+  "accuracy": 0.0,
+  "n_qa": 46,
+  "correct": 0,
+  "abstain_rate": 1.0,
+  "n_control": 6,
+  "ttft_p50": 280.8017279999149,
+  "retrieve_p50": 12.75,
+  "input_tokens_p50": 1030.5
+ },
+ "claude-haiku-5.5 + clean index": {
+  "accuracy": 0.8260869565217391,
+  "n_qa": 46,
+  "correct": 38,
+  "abstain_rate": 1.0,
+  "n_control": 6,
+  "ttft_p50": 524.4585189998361,
+  "retrieve_p50": 12.65,
+  "input_tokens_p50": 1353.0
+ }
+}

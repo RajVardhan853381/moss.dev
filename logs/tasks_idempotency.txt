@@ -1,0 +1,4 @@
+
+=== idempotency
+same body: 202 202 True true
+diff body: 422 {'message': 'This Idempotency-Key was sent with another body. Send a new key for a new task', 'type': 'invalid_request_error', 'code': 'idempotency_key_reused', 'request_id': 'a01ed0677d6b49d79d374ffe37b503e8'}

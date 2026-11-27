@@ -1,0 +1,101 @@
+{
+ "object": "list",
+ "data": [
+  {
+   "path": "screenshots/agent/ses_de32cc49fffe2FK9yz8AitQNM0-1795780001604-000.png",
+   "bytes": 353584
+  },
+  {
+   "path": "screenshots/agent/ses_de32cc49fffe2FK9yz8AitQNM0-1795780120918-000.png",
+   "bytes": 136081
+  },
+  {
+   "path": "screenshots/runner/00001-step-3.png",
+   "bytes": 96763
+  },
+  {
+   "path": "screenshots/runner/00002-step-5.png",
+   "bytes": 96763
+  },
+  {
+   "path": "screenshots/runner/00003-step-7.png",
+   "bytes": 90909
+  },
+  {
+   "path": "screenshots/runner/00004-step-9.png",
+   "bytes": 137022
+  },
+  {
+   "path": "screenshots/runner/00005-step-11.png",
+   "bytes": 134822
+  },
+  {
+   "path": "screenshots/runner/00006-step-12.png",
+   "bytes": 98059
+  },
+  {
+   "path": "screenshots/runner/00007-step-14.png",
+   "bytes": 98059
+  },
+  {
+   "path": "screenshots/runner/00008-step-16.png",
+   "bytes": 98059
+  },
+  {
+   "path": "screenshots/runner/00009-step-18.png",
+   "bytes": 353584
+  },
+  {
+   "path": "screenshots/runner/00010-step-22.png",
+   "bytes": 353605
+  },
+  {
+   "path": "screenshots/runner/00011-step-23.png",
+   "bytes": 138147
+  },
+  {
+   "path": "screenshots/runner/00012-step-24.png",
+   "bytes": 150755
+  },
+  {
+   "path": "screenshots/runner/00013-step-27.png",
+   "bytes": 138105
+  },
+  {
+   "path": "screenshots/runner/00014-step-29.png",
+   "bytes": 134595
+  },
+  {
+   "path": "screenshots/runner/00015-step-32.png",
+   "bytes": 152261
+  },
+  {
+   "path": "screenshots/runner/00016-step-33.png",
+   "bytes": 83538
+  },
+  {
+   "path": "screenshots/runner/00017-step-35.png",
+   "bytes": 149106
+  },
+  {
+   "path": "screenshots/runner/00018-step-36.png",
+   "bytes": 170999
+  },
+  {
+   "path": "screenshots/runner/00019-step-38.png",
+   "bytes": 129561
+  },
+  {
+   "path": "screenshots/runner/00020-step-43.png",
+   "bytes": 96609
+  },
+  {
+   "path": "screenshots/runner/00021-step-45.png",
+   "bytes": 293581
+  },
+  {
+   "path": "screenshots/runner/00022-step-48.png",
+   "bytes": 136081
+  }
+ ]
+}

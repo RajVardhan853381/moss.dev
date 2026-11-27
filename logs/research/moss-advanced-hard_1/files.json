@@ -1,0 +1,101 @@
+{
+ "object": "list",
+ "data": [
+  {
+   "path": "screenshots/agent/ses_de3471595ffeXhXn9ehe2rA5C2-1795778304462-000.png",
+   "bytes": 756458
+  },
+  {
+   "path": "screenshots/runner/00001-step-4.png",
+   "bytes": 279373
+  },
+  {
+   "path": "screenshots/runner/00002-step-6.png",
+   "bytes": 214648
+  },
+  {
+   "path": "screenshots/runner/00003-step-8.png",
+   "bytes": 222225
+  },
+  {
+   "path": "screenshots/runner/00004-step-10.png",
+   "bytes": 222225
+  },
+  {
+   "path": "screenshots/runner/00005-step-12.png",
+   "bytes": 325944
+  },
+  {
+   "path": "screenshots/runner/00006-step-13.png",
+   "bytes": 278572
+  },
+  {
+   "path": "screenshots/runner/00007-step-15.png",
+   "bytes": 744105
+  },
+  {
+   "path": "screenshots/runner/00008-step-17.png",
+   "bytes": 308177
+  },
+  {
+   "path": "screenshots/runner/00009-step-20.png",
+   "bytes": 146326
+  },
+  {
+   "path": "screenshots/runner/00010-step-23.png",
+   "bytes": 756458
+  },
+  {
+   "path": "screenshots/runner/00011-step-25.png",
+   "bytes": 756480
+  },
+  {
+   "path": "screenshots/runner/00012-step-26.png",
+   "bytes": 136279
+  },
+  {
+   "path": "screenshots/runner/00013-step-27.png",
+   "bytes": 136279
+  },
+  {
+   "path": "screenshots/runner/00014-step-30.png",
+   "bytes": 358263
+  },
+  {
+   "path": "screenshots/runner/00015-step-32.png",
+   "bytes": 360974
+  },
+  {
+   "path": "screenshots/runner/00016-step-33.png",
+   "bytes": 308308
+  },
+  {
+   "path": "screenshots/runner/00017-step-34.png",
+   "bytes": 381292
+  },
+  {
+   "path": "screenshots/runner/00018-step-35.png",
+   "bytes": 280922
+  },
+  {
+   "path": "screenshots/runner/00019-step-36.png",
+   "bytes": 340665
+  },
+  {
+   "path": "screenshots/runner/00020-step-39.png",
+   "bytes": 222225
+  },
+  {
+   "path": "screenshots/runner/00021-step-40.png",
+   "bytes": 223762
+  },
+  {
+   "path": "screenshots/runner/00022-step-41.png",
+   "bytes": 220771
+  },
+  {
+   "path": "screenshots/runner/00023-step-43.png",
+   "bytes": 358038
+  }
+ ]
+}

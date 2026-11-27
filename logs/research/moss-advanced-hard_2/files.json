@@ -1,0 +1,109 @@
+{
+ "object": "list",
+ "data": [
+  {
+   "path": "screenshots/agent/ses_de32cc6a3ffe9T7LaNCgQN6QVQ-1795780008479-000.png",
+   "bytes": 358997
+  },
+  {
+   "path": "screenshots/agent/ses_de32cc6a3ffe9T7LaNCgQN6QVQ-1795780116455-000.png",
+   "bytes": 130995
+  },
+  {
+   "path": "screenshots/runner/00001-step-4.png",
+   "bytes": 95373
+  },
+  {
+   "path": "screenshots/runner/00002-step-5.png",
+   "bytes": 129728
+  },
+  {
+   "path": "screenshots/runner/00003-step-7.png",
+   "bytes": 129727
+  },
+  {
+   "path": "screenshots/runner/00004-step-8.png",
+   "bytes": 93699
+  },
+  {
+   "path": "screenshots/runner/00005-step-10.png",
+   "bytes": 93699
+  },
+  {
+   "path": "screenshots/runner/00006-step-12.png",
+   "bytes": 93699
+  },
+  {
+   "path": "screenshots/runner/00007-step-13.png",
+   "bytes": 357215
+  },
+  {
+   "path": "screenshots/runner/00008-step-15.png",
+   "bytes": 124249
+  },
+  {
+   "path": "screenshots/runner/00009-step-17.png",
+   "bytes": 124249
+  },
+  {
+   "path": "screenshots/runner/00010-step-19.png",
+   "bytes": 358997
+  },
+  {
+   "path": "screenshots/runner/00011-step-22.png",
+   "bytes": 359016
+  },
+  {
+   "path": "screenshots/runner/00012-step-23.png",
+   "bytes": 81986
+  },
+  {
+   "path": "screenshots/runner/00013-step-24.png",
+   "bytes": 124249
+  },
+  {
+   "path": "screenshots/runner/00014-step-26.png",
+   "bytes": 124249
+  },
+  {
+   "path": "screenshots/runner/00015-step-29.png",
+   "bytes": 132369
+  },
+  {
+   "path": "screenshots/runner/00016-step-30.png",
+   "bytes": 129522
+  },
+  {
+   "path": "screenshots/runner/00017-step-31.png",
+   "bytes": 124249
+  },
+  {
+   "path": "screenshots/runner/00018-step-32.png",
+   "bytes": 143556
+  },
+  {
+   "path": "screenshots/runner/00019-step-34.png",
+   "bytes": 130059
+  },
+  {
+   "path": "screenshots/runner/00020-step-35.png",
+   "bytes": 59070
+  },
+  {
+   "path": "screenshots/runner/00021-step-38.png",
+   "bytes": 129728
+  },
+  {
+   "path": "screenshots/runner/00022-step-40.png",
+   "bytes": 93699
+  },
+  {
+   "path": "screenshots/runner/00023-step-44.png",
+   "bytes": 128935
+  },
+  {
+   "path": "screenshots/runner/00024-step-46.png",
+   "bytes": 130995
+  }
+ ]
+}

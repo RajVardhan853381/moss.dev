@@ -1,0 +1,40 @@
+create: 202 5d1f7df1cd424704be70d88f9dceb6a6
+task: task_dc95625cc0da4633b94158af3648cdb5
+[     0s] ('running', None, 0)
+[    10s] ('running', 0, 0)
+[    20s] ('running', 0, 0.0102)
+[    41s] ('running', 0, 0.0112)
+[    51s] ('running', 3, 0.0132)
+[    71s] ('running', 6, 0.0148)
+[    92s] ('running', 8, 0.0184)
+[   102s] ('running', 10, 0.0194)
+[   122s] ('running', 13, 0.0222)
+[   133s] ('running', 14, 0.0235)
+[   153s] ('running', 15, 0.025)
+[   163s] ('running', 16, 0.028)
+[   204s] ('running', 18, 0.0333)
+[   245s] ('completed', 19, 0.0394)
+{
+ "status": "completed",
+ "error": null,
+ "verification": {
+  "method": "output_schema",
+  "passed": true
+ },
+ "steps": 19,
+ "model_calls": 26,
+ "cost": {
+  "model_usd": 0.03937,
+  "total_usd": 0.041037,
+  "browser_usd": 0.0016666666666666668,
+  "traffic_usd": null
+ },
+ "input_tokens": 456125,
+ "cached_input_tokens": 397935,
+ "output_tokens": 29888,
+ "browser_seconds": 242,
+ "created": "2026-11-27T11:45:31.668392+00:00",
+ "started": "2026-11-27T11:45:31.684252+00:00",
+ "finished": "2026-11-27T11:49:34.755443+00:00"
+}
+saved to /home/user/moss.dev/scripts/../logs/research/moss-fast-hard_2

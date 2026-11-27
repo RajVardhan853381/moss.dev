@@ -1,0 +1,5 @@
+
+=== cancel running task
+cancel: 200 running True
+final: cancelled {'model_usd': 0.000113, 'total_usd': 0.000446, 'browser_usd': 0.0003333333333333333, 'traffic_usd': None}
+files after cancel: 200 {'object': 'list', 'data': []}

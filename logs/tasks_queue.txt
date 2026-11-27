@@ -1,0 +1,4 @@
+
+=== queue limit: 22 rapid tasks, then cancel all
+status codes: [202, 202, 202, 202, 202, 202, 202, 202, 202, 202, 202, 202, 202, 202, 202, 202, 202, 202, 202, 202, 202, 202]
+cancelled 22

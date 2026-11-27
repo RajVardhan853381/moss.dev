@@ -1,0 +1,27 @@
+
+=== models list
+200 ['moss/fastlane-1', 'openai/gpt-6-luna', 'openai/gpt-6.1-terra', 'openai/gpt-6.1-sol', 'openai/gpt-6-astra', 'anthropic/claude-haiku-5.5', 'anthropic/claude-sonnet-5.5', 'anthropic/claude-opus-5.5', 'anthropic/claude-fable-5.1', 'google/gemini-3.8-flash', 'google/gemini-3.5-flash-lite', 'google/gemini-4-argon', 'z-ai/glm-5.3', 'moonshotai/kimi-k3', 'deepseek/deepseek-v4.1-flash', 'qwen/qwen3.8-flash', 'deepseek/deepseek-v4.1-flash-1017', 'z-ai/glm-5.3-flash', 'minimax/minimax-m3.1-flash']
+
+=== TTFT, moss/fastlane-1 vs vendor models (stream, 5 runs each)
+moss/fastlane-1: ttft median=102ms min=95ms max=204ms
+anthropic/claude-haiku-5.5: ttft median=94ms min=88ms max=795ms
+openai/gpt-6-luna: ttft median=89ms min=88ms max=1291ms
+
+=== error shapes / validation
+unknown field: 400 {'error': {'message': 'bogus is not supported', 'type': 'invalid_request_error', 'code': 'unsupported_parameter', 'request_id': '8230e3aaef9a45f098149d5e392d836
+previous_response_id: 400 {'error': {'message': 'previous_response_id is not supported. Send the whole conversation in input.', 'type': 'invalid_request_error', 'code': 'unsupported_para
+bad model: 400 {'error': {'message': 'Unknown model nope/none. Send model moss/fastlane-1, or a vendor model name with your own key in X-Moss-Provider-Key.', 'type': 'invalid_
+missing input: 400 {'error': {'message': 'input must be a string or a list of items', 'type': 'invalid_request_error', 'code': 'invalid_request_error', 'request_id': 'bc3577ff1674
+list instructions: 400 {'error': {'message': 'instructions must be a string', 'type': 'invalid_request_error', 'code': 'invalid_request_error', 'request_id': 'f1ac132a941c4c66b599c09c
+background true: 400 {'error': {'message': 'background true is not supported', 'type': 'invalid_request_error', 'code': 'unsupported_parameter', 'request_id': '6b3263f898b64ed5a7f3c
+reasoning on fastlane (ignored?): 200 {'id': 'resp_c409b928efaf407e8efc7db22423168f', 'object': 'response', 'created_at': 1795774116, 'status': 'completed', 'error': None, 'incomplete_details': None
+unknown index: 403 {'error': {'message': 'X-Moss-Indexes names an index outside this project', 'type': 'permission_error', 'code': 'permission_error', 'request_id': '7b6b230952174
+
+=== chat completions parity
+200 {'id': 'chatcmpl-566ee52707504abf9fead1a1116d52f0', 'object': 'chat.completion', 'created': 1795774116, 'model': 'moss/fastlane-1', 'choices': [{'index': 0, 'message': {'role': 'assistant', 'content': 0.24s
+
+=== json_schema output
+200 {'id': 'resp_df5e2ffec30b4bee8979bbfd433010e7', 'object': 'response', 'created_at': 1795774118, 'status': 'completed', 'error': None, 'incomplete_details': None, 'model': 'anthropic/claude-haiku-5.5', 'instructions': None, 'max_output_tokens': None, 'metadata': {}, 'parallel_tool_calls': True, 'prev
+
+=== big input / limits
+400 {'error': {'message': 'This request has about 750097 prompt tokens. The limit is 262144.', 'type': 'invalid_request_error', 'code': 'context_length_exceeded', 'request_id': '3cec51c9edc447f6a9dd2a01af

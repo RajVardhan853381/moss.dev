@@ -1,0 +1,292 @@
+{
+ "run": "moss-fast-hard_1",
+ "variant": "hard",
+ "status": "completed",
+ "error": null,
+ "verification": {
+  "method": "output_schema",
+  "passed": false,
+  "problems": [
+   "$.vendors[0].pypi_package: missing",
+   "$.vendors[0].releases_in_window: missing",
+   "$.vendors[0].notes: missing",
+   "$.vendors[0].unverified: expected array",
+   "$.vendors[1].pypi_package: missing",
+   "$.vendors[1].releases_in_window: missing",
+   "$.vendors[1].notes: missing",
+   "$.vendors[1].unverified: expected array",
+   "$.vendors[2].pypi_package: missing",
+   "$.vendors[2].releases_in_window: missing",
+   "$.vendors[2].notes: missing",
+   "$.vendors[2].unverified: expected array",
+   "$.vendors[3].pypi_package: missing",
+   "$.vendors[3].releases_in_window: missing",
+   "$.vendors[3].notes: missing",
+   "$.vendors[3].unverified: expected array",
+   "$.vendors[4].pypi_package: missing",
+   "$.vendors[4].releases_in_window: missing",
+   "$.vendors[4].notes: missing",
+   "$.vendors[4].unverified: expected array"
+  ]
+ },
+ "schema_valid": false,
+ "schema_problems": 20,
+ "strict_score": "24/24",
+ "lenient_score": "24/24",
+ "abstained_fields": 0,
+ "fake_vendor": {
+  "status": "not_found",
+  "fabricated_fields": [],
+  "passed": true,
+  "notes": null
+ },
+ "overconfident_rows": [],
+ "rows": [
+  {
+   "vendor": "Pinecone",
+   "status": "verified",
+   "package_ok": true,
+   "version_ok": true,
+   "count_ok": true,
+   "count_within_1": true,
+   "change_ok": true,
+   "reported": {
+    "version": "10.3.0",
+    "count": 5,
+    "count_key": "window_release_count",
+    "change": "unchanged",
+    "n_versions_listed": 5
+   },
+   "truth": {
+    "version": "10.3.0",
+    "count_before": 5,
+    "count_now": 5,
+    "change": "unchanged",
+    "change_by_upload": "unchanged"
+   },
+   "spec_ambiguous": false,
+   "version_list_precision": 1.0,
+   "version_list_recall": 1.0,
+   "count_matches_list": true,
+   "notes": null,
+   "unverified": null
+  },
+  {
+   "vendor": "Qdrant",
+   "status": "verified",
+   "package_ok": true,
+   "version_ok": true,
+   "count_ok": true,
+   "count_within_1": true,
+   "change_ok": true,
+   "reported": {
+    "version": "1.20.0",
+    "count": 2,
+    "count_key": "window_release_count",
+    "change": "unchanged",
+    "n_versions_listed": 2
+   },
+   "truth": {
+    "version": "1.20.0",
+    "count_before": 2,
+    "count_now": 2,
+    "change": "unchanged",
+    "change_by_upload": "unchanged"
+   },
+   "spec_ambiguous": false,
+   "version_list_precision": 1.0,
+   "version_list_recall": 1.0,
+   "count_matches_list": true,
+   "notes": null,
+   "unverified": null
+  },
+  {
+   "vendor": "Weaviate",
+   "status": "verified",
+   "package_ok": true,
+   "version_ok": true,
+   "count_ok": true,
+   "count_within_1": true,
+   "change_ok": true,
+   "reported": {
+    "version": "4.25.0",
+    "count": 4,
+    "count_key": "window_release_count",
+    "change": "raised",
+    "n_versions_listed": 4
+   },
+   "truth": {
+    "version": "4.25.0",
+    "count_before": 4,
+    "count_now": 4,
+    "change": "raised",
+    "change_by_upload": "raised"
+   },
+   "spec_ambiguous": false,
+   "version_list_precision": 1.0,
+   "version_list_recall": 1.0,
+   "count_matches_list": true,
+   "notes": null,
+   "unverified": null
+  },
+  {
+   "vendor": "Chroma",
+   "status": "verified",
+   "package_ok": true,
+   "version_ok": true,
+   "count_ok": true,
+   "count_within_1": true,
+   "change_ok": true,
+   "reported": {
+    "version": "1.5.9",
+    "count": 0,
+    "count_key": "window_release_count",
+    "change": "unchanged",
+    "n_versions_listed": 0
+   },
+   "truth": {
+    "version": "1.5.9",
+    "count_before": 0,
+    "count_now": 0,
+    "change": "unchanged",
+    "change_by_upload": "unchanged"
+   },
+   "spec_ambiguous": false,
+   "version_list_precision": 1.0,
+   "version_list_recall": 1.0,
+   "count_matches_list": true,
+   "notes": null,
+   "unverified": null
+  },
+  {
+   "vendor": "Moss",
+   "status": "verified",
+   "package_ok": true,
+   "version_ok": true,
+   "count_ok": true,
+   "count_within_1": true,
+   "change_ok": true,
+   "reported": {
+    "version": "1.26.0",
+    "count": 22,
+    "count_key": "window_release_count",
+    "change": "unchanged",
+    "n_versions_listed": 22
+   },
+   "truth": {
+    "version": "1.26.0",
+    "count_before": 22,
+    "count_now": 22,
+    "change": "unchanged",
+    "change_by_upload": "unchanged"
+   },
+   "spec_ambiguous": false,
+   "version_list_precision": 1.0,
+   "version_list_recall": 1.0,
+   "count_matches_list": true,
+   "notes": null,
+   "unverified": null
+  },
+  {
+   "vendor": "Milvus (Zilliz)",
+   "status": "verified",
+   "package_ok": true,
+   "version_ok": true,
+   "count_ok": true,
+   "count_within_1": true,
+   "change_ok": true,
+   "reported": {
+    "version": "3.0.3",
+    "count": 3,
+    "count_key": "window_release_count",
+    "change": "raised",
+    "n_versions_listed": 3
+   },
+   "truth": {
+    "version": "3.0.3",
+    "count_before": 3,
+    "count_now": 3,
+    "change": "unchanged",
+    "change_by_upload": "raised"
+   },
+   "spec_ambiguous": true,
+   "version_list_precision": 1.0,
+   "version_list_recall": 1.0,
+   "count_matches_list": true,
+   "notes": null,
+   "unverified": null
+  },
+  {
+   "vendor": "LanceDB",
+   "status": "verified",
+   "package_ok": true,
+   "version_ok": true,
+   "count_ok": true,
+   "count_within_1": true,
+   "change_ok": true,
+   "reported": {
+    "version": "0.41.0",
+    "count": 4,
+    "count_key": "window_release_count",
+    "change": "unchanged",
+    "n_versions_listed": 4
+   },
+   "truth": {
+    "version": "0.41.0",
+    "count_before": 4,
+    "count_now": 4,
+    "change": "unchanged",
+    "change_by_upload": "unchanged"
+   },
+   "spec_ambiguous": false,
+   "version_list_precision": 1.0,
+   "version_list_recall": 1.0,
+   "count_matches_list": true,
+   "notes": null,
+   "unverified": null
+  },
+  {
+   "vendor": "Turbopuffer",
+   "status": "verified",
+   "package_ok": true,
+   "version_ok": true,
+   "count_ok": true,
+   "count_within_1": true,
+   "change_ok": true,
+   "reported": {
+    "version": "3.1.0",
+    "count": 9,
+    "count_key": "window_release_count",
+    "change": "unchanged",
+    "n_versions_listed": 9
+   },
+   "truth": {
+    "version": "3.1.0",
+    "count_before": 9,
+    "count_now": 9,
+    "change": "unchanged",
+    "change_by_upload": "unchanged"
+   },
+   "spec_ambiguous": false,
+   "version_list_precision": 1.0,
+   "version_list_recall": 1.0,
+   "count_matches_list": true,
+   "notes": null,
+   "unverified": null
+  }
+ ],
+ "summary_text": "Moss had the most releases in the window (22), followed by Turbopuffer (9). Requires Python increased for Weaviate and Milvus, and was unchanged for the other verified SDKs.",
+ "cost": {
+  "model_usd": 0.13024,
+  "total_usd": 0.133573,
+  "browser_usd": 0.0033333333333333335,
+  "traffic_usd": null
+ },
+ "steps": 41,
+ "model_calls": 64,
+ "tokens": {
+  "input": 2246993,
+  "cached": 1843540,
+  "output": 60558
+ }
+}

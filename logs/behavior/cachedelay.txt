@@ -1,0 +1,2 @@
+[INFO ] I anthropic/claude-haiku-5.5: seconds until an identical request is a cache hit (None = no hit within 10 s): [2.7, 2.1, 0.7, 0.6, 0.7, 0.7, 0.7, 0.7, 0.7, 0.7]
+[INFO ] I openai/gpt-6-luna: seconds until an identical request is a cache hit (None = no hit within 10 s): [0.7, 0.7, 0.6, 0.7, 0.7, 0.7, 0.6, 0.7, 0.7, 0.7]

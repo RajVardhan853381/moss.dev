@@ -1,0 +1,3 @@
+A: root=overview HTML, no includePaths, depth 2, maxPages 10 -> {'effectiveMaxPages': 10, 'job': 'completed', 'seconds': 23, 'lastPageCount': 1, 'lastDocCount': 62, 'chunks': 62, 'junk_chunks': 28}
+B: root=overview HTML, includePaths '/docs/inference/**', depth 2 -> {'effectiveMaxPages': 10, 'job': 'completed', 'seconds': 37, 'lastPageCount': 1, 'lastDocCount': 62, 'chunks': 62, 'junk_chunks': 28}
+C: root=docs home HTML, depth 1, maxPages 10 -> {'effectiveMaxPages': 10, 'job': 'completed', 'seconds': 23, 'lastPageCount': 2, 'lastDocCount': 83, 'chunks': 83, 'junk_chunks': 19}

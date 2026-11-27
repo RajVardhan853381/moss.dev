@@ -1,0 +1,85 @@
+create: 202 e1e5339a11b84c72a0e94ec9a3bf6b59
+task: task_fc756cc11e89458d8413db9d80bb0394
+[     0s] ('running', None, 0)
+[    10s] ('running', 0, 0)
+[    20s] ('running', 1, 0.0095)
+[    41s] ('running', 3, 0.0106)
+[    51s] ('running', 4, 0.011)
+[    72s] ('running', 6, 0.0118)
+[    92s] ('running', 7, 0.0118)
+[   102s] ('running', 9, 0.0135)
+[   123s] ('running', 13, 0.0163)
+[   133s] ('running', 15, 0.0198)
+[   154s] ('running', 18, 0.0222)
+[   164s] ('running', 20, 0.0252)
+[   185s] ('running', 23, 0.028)
+[   195s] ('running', 24, 0.0292)
+[   215s] ('running', 24, 0.0311)
+[   235s] ('running', 25, 0.0311)
+[   246s] ('running', 27, 0.0359)
+[   266s] ('running', 29, 0.0374)
+[   276s] ('running', 30, 0.0398)
+[   296s] ('running', 31, 0.0398)
+[   307s] ('running', 31, 0.0432)
+[   327s] ('running', 32, 0.0432)
+[   348s] ('running', 33, 0.0463)
+[   358s] ('running', 34, 0.0543)
+[   378s] ('running', 36, 0.067)
+[   388s] ('running', 36, 0.0691)
+[   409s] ('running', 36, 0.072)
+[   440s] ('running', 36, 0.0869)
+[   460s] ('running', 36, 0.0906)
+[   470s] ('running', 36, 0.0951)
+[   491s] ('running', 36, 0.0983)
+[   501s] ('running', 37, 0.1041)
+[   521s] ('running', 37, 0.106)
+[   532s] ('running', 37, 0.1179)
+[   552s] ('running', 37, 0.1197)
+[   573s] ('running', 39, 0.123)
+[   604s] ('completed', 41, 0.1302)
+{
+ "status": "completed",
+ "error": null,
+ "verification": {
+  "method": "output_schema",
+  "passed": false,
+  "problems": [
+   "$.vendors[0].pypi_package: missing",
+   "$.vendors[0].releases_in_window: missing",
+   "$.vendors[0].notes: missing",
+   "$.vendors[0].unverified: expected array",
+   "$.vendors[1].pypi_package: missing",
+   "$.vendors[1].releases_in_window: missing",
+   "$.vendors[1].notes: missing",
+   "$.vendors[1].unverified: expected array",
+   "$.vendors[2].pypi_package: missing",
+   "$.vendors[2].releases_in_window: missing",
+   "$.vendors[2].notes: missing",
+   "$.vendors[2].unverified: expected array",
+   "$.vendors[3].pypi_package: missing",
+   "$.vendors[3].releases_in_window: missing",
+   "$.vendors[3].notes: missing",
+   "$.vendors[3].unverified: expected array",
+   "$.vendors[4].pypi_package: missing",
+   "$.vendors[4].releases_in_window: missing",
+   "$.vendors[4].notes: missing",
+   "$.vendors[4].unverified: expected array"
+  ]
+ },
+ "steps": 41,
+ "model_calls": 64,
+ "cost": {
+  "model_usd": 0.13024,
+  "total_usd": 0.133573,
+  "browser_usd": 0.0033333333333333335,
+  "traffic_usd": null
+ },
+ "input_tokens": 2246993,
+ "cached_input_tokens": 1843540,
+ "output_tokens": 60558,
+ "browser_seconds": 596,
+ "created": "2026-11-27T11:06:02.167407+00:00",
+ "started": "2026-11-27T11:06:02.181045+00:00",
+ "finished": "2026-11-27T11:16:01.021877+00:00"
+}
+saved to /home/user/moss.dev/scripts/../logs/research/moss-fast-hard_1

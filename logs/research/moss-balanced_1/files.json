@@ -1,0 +1,73 @@
+{
+ "object": "list",
+ "data": [
+  {
+   "path": "screenshots/agent/ses_de350e8dbffeoTVqHLxKMM2wz0-1795777619052-000.png",
+   "bytes": 354856
+  },
+  {
+   "path": "screenshots/runner/00001-step-4.png",
+   "bytes": 97632
+  },
+  {
+   "path": "screenshots/runner/00002-step-5.png",
+   "bytes": 188515
+  },
+  {
+   "path": "screenshots/runner/00003-step-6.png",
+   "bytes": 359869
+  },
+  {
+   "path": "screenshots/runner/00004-step-7.png",
+   "bytes": 355920
+  },
+  {
+   "path": "screenshots/runner/00005-step-13.png",
+   "bytes": 354838
+  },
+  {
+   "path": "screenshots/runner/00006-step-14.png",
+   "bytes": 134856
+  },
+  {
+   "path": "screenshots/runner/00007-step-15.png",
+   "bytes": 176550
+  },
+  {
+   "path": "screenshots/runner/00008-step-16.png",
+   "bytes": 165943
+  },
+  {
+   "path": "screenshots/runner/00009-step-19.png",
+   "bytes": 123283
+  },
+  {
+   "path": "screenshots/runner/00010-step-20.png",
+   "bytes": 160514
+  },
+  {
+   "path": "screenshots/runner/00011-step-23.png",
+   "bytes": 115349
+  },
+  {
+   "path": "screenshots/runner/00012-step-24.png",
+   "bytes": 184194
+  },
+  {
+   "path": "screenshots/runner/00013-step-26.png",
+   "bytes": 235990
+  },
+  {
+   "path": "screenshots/runner/00014-step-27.png",
+   "bytes": 313713
+  },
+  {
+   "path": "screenshots/runner/00015-step-29.png",
+   "bytes": 105045
+  },
+  {
+   "path": "screenshots/runner/00016-step-33.png",
+   "bytes": 160509
+  }
+ ]
+}

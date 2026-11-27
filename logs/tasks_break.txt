@@ -1,0 +1,5 @@
+
+=== break attempts
+tiny budget: failed {'code': 'budget_exceeded', 'message': 'Spent $0.01'} {'model_usd': 0.010128, 'total_usd': 0.010461, 'browser_usd': 0.0003333333333333333, 'traffic_usd': None}
+impossible: completed None {'method': 'output_schema', 'passed': True} {'output': {'phone': 'Could not verify: the hostname has no identifiable owning company.'}, 'output_text': '{"phone":"Could not verify: the hostname has no identifiable owning company."}'}
+baseline: completed {'output': None, 'output_text': 'Example Domain'}

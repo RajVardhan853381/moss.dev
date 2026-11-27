@@ -1,0 +1,116 @@
+{
+ "goal": "You are doing competitive-intelligence research on the release activity of the Python SDKs of retrieval / vector-search vendors. Use PyPI (pypi.org) for every value. The vendors are:\n\n1. Pinecone\n2. Qdrant\n3. Weaviate\n4. Chroma\n5. Moss (the real-time semantic search runtime from moss.dev / usemoss)\n6. Milvus (Zilliz)\n7. LanceDB\n8. Turbopuffer\n9. Zyphrelon Vector Cloud\n\nFor each vendor, find the vendor's current, officially supported Python SDK on PyPI and report:\n- pypi_package: the PyPI package name\n- latest_stable_version: the latest stable version (not a pre-release, not yanked)\n- releases_in_window: how many releases PyPI's \"Release history\" for the project lists with an upload date from 2026-08-29 through 2026-11-27 inclusive (UTC). Count every listed release in that date range, including pre-releases and yanked ones. If there are none, the answer is 0.\n- versions_in_window: the version numbers you counted, so the count can be audited\n- requires_python_change: compare the \"Requires: Python\" value of the latest stable release with that of the stable release immediately before it (open both release pages): \"raised\" if the minimum Python version went up, \"lowered\" if it went down, \"unchanged\" if it is the same\n- sources: the URLs you actually opened that support these values\n- status: \"verified\" if every field above is confirmed from pages you opened, \"partial\" if some could not be confirmed, \"not_found\" if you could not find an official Python SDK for the vendor\n- unverified: each field you could not confirm, with the reason\n- notes: anything else a reader should know\n\nRules: only report values you saw on a page you opened. Never guess and never fill a field from memory. If a value cannot be confirmed, set it to null (use [] for versions_in_window) and list it in \"unverified\". Put today's date (UTC) in \"as_of\". Finish with a 2-3 sentence \"summary\" naming the vendors with the most release activity in the window and any vendor you could not verify.",
+ "environment": {
+  "type": "browser",
+  "start_url": "https://pypi.org/"
+ },
+ "model": "moss-balanced",
+ "effort": "medium",
+ "output_schema": {
+  "type": "object",
+  "properties": {
+   "as_of": {
+    "type": "string"
+   },
+   "vendors": {
+    "type": "array",
+    "items": {
+     "type": "object",
+     "properties": {
+      "vendor": {
+       "type": "string"
+      },
+      "pypi_package": {
+       "type": [
+        "string",
+        "null"
+       ]
+      },
+      "latest_stable_version": {
+       "type": [
+        "string",
+        "null"
+       ]
+      },
+      "releases_in_window": {
+       "type": [
+        "integer",
+        "null"
+       ]
+      },
+      "versions_in_window": {
+       "type": "array",
+       "items": {
+        "type": "string"
+       }
+      },
+      "requires_python_change": {
+       "type": [
+        "string",
+        "null"
+       ],
+       "enum": [
+        "raised",
+        "lowered",
+        "unchanged",
+        null
+       ]
+      },
+      "sources": {
+       "type": "array",
+       "items": {
+        "type": "string"
+       }
+      },
+      "status": {
+       "type": "string",
+       "enum": [
+        "verified",
+        "partial",
+        "not_found"
+       ]
+      },
+      "unverified": {
+       "type": "array",
+       "items": {
+        "type": "string"
+       }
+      },
+      "notes": {
+       "type": "string"
+      }
+     },
+     "required": [
+      "vendor",
+      "pypi_package",
+      "latest_stable_version",
+      "releases_in_window",
+      "versions_in_window",
+      "requires_python_change",
+      "sources",
+      "status",
+      "unverified",
+      "notes"
+     ]
+    }
+   },
+   "summary": {
+    "type": "string"
+   }
+  },
+  "required": [
+   "as_of",
+   "vendors",
+   "summary"
+  ]
+ },
+ "limits": {
+  "max_runtime_seconds": 1500,
+  "max_cost_usd": 1.5
+ },
+ "metadata": {
+  "purpose": "work-sample research task",
+  "tier": "moss-balanced",
+  "variant": "hard"
+ }
+}

@@ -1,0 +1,2 @@
+[INFO ] F1 burst of 30 simultaneous requests (documented burst limit 10): status counts={200: 10, 429: 20}; sample 429 body={"error":{"message":"Rate limit reached for project <project_id>: too many requests per minute. Please try again in 1s.","type":"requests","code":"rate_limit_exceeded","request; Retry-After=1
+[PASS ] F2 request succeeds after waiting Retry-After: waited 1.0s -> HTTP 200

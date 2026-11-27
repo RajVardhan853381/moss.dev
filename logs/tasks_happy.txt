@@ -1,0 +1,39 @@
+
+=== happy path: structured output, cheap model
+202 task_e415f48df9a44a87bc6d4da4bdc6a8d8 queued
+{
+ "status": "completed",
+ "result": {
+  "output": {
+   "title": null,
+   "link_count": 1
+  },
+  "output_text": "{\"title\":null,\"link_count\":1}"
+ },
+ "verification": {
+  "method": "output_schema",
+  "passed": false,
+  "problems": [
+   "$.title: expected string"
+  ]
+ },
+ "usage": {
+  "cost": {
+   "model_usd": 0.005924,
+   "total_usd": 0.006257,
+   "browser_usd": 0.0003333333333333333,
+   "traffic_usd": null
+  },
+  "steps": 4,
+  "cost_usd": 0.005924,
+  "model_calls": 5,
+  "input_tokens": 31011,
+  "output_tokens": 918,
+  "browser_minutes": 0.36,
+  "browser_seconds": 21,
+  "browser_traffic_mb": null,
+  "cached_input_tokens": 22025
+ },
+ "error": null
+}
+files: 200 {'object': 'list', 'data': [{'path': 'screenshots/runner/00001-step-2.png', 'bytes': 285823}, {'path': 'screenshots/runner/00002-step-4.png', 'bytes': 285823}, {'path': 'screenshots/runner/00003-step-6.png', 'bytes': 285823}]}

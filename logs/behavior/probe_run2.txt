@@ -1,0 +1,7 @@
+[INFO ] C0 probe doc live (build time, extra seconds until retrievable): build 2s, retrievable after +16.5s
+[PASS ] B4 grounded request is not answered from an ungrounded cached reply (X-Moss-Indexes in key): ungrounded: 'I do not know.'; grounded: 'The zebra-quartz access code is QZ-4417.' cache_hit=False
+[PASS ] B5 retrieve-off request is not answered from a grounded cached reply (X-Moss-Retrieve in key): grounded repeat cache_hit=True said 'The zebra-quartz access code is QZ-4417.'; retrieve-off said 'I do not know.' cache_hit=True
+[FAIL ] C1 identical grounded request right after the index changed: before: 'The zebra-quartz access code is QZ-4417.' (repeat hit=True); after update (build 3s, searchable +Nones): 'The zebra-quartz access code is QZ-4417.' cache_hit=True
+[INFO ] C2 how long the stale cached reply lives after the index changed: fresh answer first seen after 11 s (polled up to 360 s)
+[PASS ] C3 workaround: X-Moss-Cache:off returns the fresh answer: said 'The zebra-quartz access code is QZ-9902.'
+[INFO ] C4 retrieve_ms on successive calls after the index update: ['11.6', '11.5', '10.2', '11.3']

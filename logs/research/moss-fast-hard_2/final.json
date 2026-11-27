@@ -1,0 +1,385 @@
+{
+ "id": "task_dc95625cc0da4633b94158af3648cdb5",
+ "object": "task",
+ "status": "completed",
+ "title": "Research Python SDK release activity",
+ "goal": "You are doing competitive-intelligence research on the release activity of the Python SDKs of retrieval / vector-search vendors. Use PyPI (pypi.org) for every value. The vendors are:\n\n1. Pinecone\n2. Qdrant\n3. Weaviate\n4. Chroma\n5. Moss (the real-time semantic search runtime from moss.dev / usemoss)\n6. Milvus (Zilliz)\n7. LanceDB\n8. Turbopuffer\n9. Zyphrelon Vector Cloud\n\nFor each vendor, find the vendor's current, officially supported Python SDK on PyPI and report:\n- pypi_package: the PyPI package name\n- latest_stable_version: the latest stable version (not a pre-release, not yanked)\n- releases_in_window: how many releases PyPI's \"Release history\" for the project lists with an upload date from 2026-08-29 through 2026-11-27 inclusive (UTC). Count every listed release in that date range, including pre-releases and yanked ones. If there are none, the answer is 0.\n- versions_in_window: the version numbers you counted, so the count can be audited\n- requires_python_change: compare the \"Requires: Python\" value of the latest stable release with that of the stable release immediately before it (open both release pages): \"raised\" if the minimum Python version went up, \"lowered\" if it went down, \"unchanged\" if it is the same\n- sources: the URLs you actually opened that support these values\n- status: \"verified\" if every field above is confirmed from pages you opened, \"partial\" if some could not be confirmed, \"not_found\" if you could not find an official Python SDK for the vendor\n- unverified: each field you could not confirm, with the reason\n- notes: anything else a reader should know\n\nRules: only report values you saw on a page you opened. Never guess and never fill a field from memory. If a value cannot be confirmed, set it to null (use [] for versions_in_window) and list it in \"unverified\". Put today's date (UTC) in \"as_of\". Finish with a 2-3 sentence \"summary\" naming the vendors with the most release activity in the window and any vendor you could not verify.",
+ "environment": {
+  "type": "browser",
+  "start_url": "https://pypi.org/"
+ },
+ "output_schema": {
+  "type": "object",
+  "required": [
+   "as_of",
+   "vendors",
+   "summary"
+  ],
+  "properties": {
+   "as_of": {
+    "type": "string"
+   },
+   "summary": {
+    "type": "string"
+   },
+   "vendors": {
+    "type": "array",
+    "items": {
+     "type": "object",
+     "required": [
+      "vendor",
+      "pypi_package",
+      "latest_stable_version",
+      "releases_in_window",
+      "versions_in_window",
+      "requires_python_change",
+      "sources",
+      "status",
+      "unverified",
+      "notes"
+     ],
+     "properties": {
+      "notes": {
+       "type": "string"
+      },
+      "status": {
+       "enum": [
+        "verified",
+        "partial",
+        "not_found"
+       ],
+       "type": "string"
+      },
+      "vendor": {
+       "type": "string"
+      },
+      "sources": {
+       "type": "array",
+       "items": {
+        "type": "string"
+       }
+      },
+      "unverified": {
+       "type": "array",
+       "items": {
+        "type": "string"
+       }
+      },
+      "pypi_package": {
+       "type": [
+        "string",
+        "null"
+       ]
+      },
+      "releases_in_window": {
+       "type": [
+        "integer",
+        "null"
+       ]
+      },
+      "versions_in_window": {
+       "type": "array",
+       "items": {
+        "type": "string"
+       }
+      },
+      "latest_stable_version": {
+       "type": [
+        "string",
+        "null"
+       ]
+      },
+      "requires_python_change": {
+       "enum": [
+        "raised",
+        "lowered",
+        "unchanged",
+        null
+       ],
+       "type": [
+        "string",
+        "null"
+       ]
+      }
+     }
+    }
+   }
+  }
+ },
+ "limits": {
+  "max_cost_usd": 1.0,
+  "max_runtime_seconds": 1500
+ },
+ "model": "moss-fast",
+ "effort": "medium",
+ "metadata": {
+  "tier": "moss-fast",
+  "purpose": "work-sample research task",
+  "variant": "hard"
+ },
+ "byok": false,
+ "result": {
+  "output": {
+   "as_of": "2026-11-27",
+   "summary": "Moss led the window with 22 releases, followed by Turbopuffer with 9 and Pinecone with 5. No official PyPI SDK could be verified for Zyphrelon Vector Cloud; Pinecone's Requires-Python change is also unconfirmed because the 10.2.0 metadata omitted that value.",
+   "vendors": [
+    {
+     "notes": "PyPI identifies pinecone as the SDK; pinecone-client is marked deprecated. The window count includes each version with at least one upload in the inclusive UTC range, including the pre-release.",
+     "status": "partial",
+     "vendor": "Pinecone",
+     "sources": [
+      "https://pypi.org/project/pinecone/",
+      "https://pypi.org/pypi/pinecone/json",
+      "https://pypi.org/pypi/pinecone/10.3.0/json",
+      "https://pypi.org/pypi/pinecone/10.2.0/json",
+      "https://pypi.org/pypi/pinecone-client/json"
+     ],
+     "unverified": [
+      "requires_python_change: the 10.2.0 PyPI JSON metadata did not provide a Requires-Python value, and its HTML release page returned a Client Challenge, so the minimum cannot be compared with 10.3.0."
+     ],
+     "pypi_package": "pinecone",
+     "releases_in_window": 5,
+     "versions_in_window": [
+      "10.3.0",
+      "10.2.0",
+      "10.1.0",
+      "10.1.0rc1",
+      "10.0.0"
+     ],
+     "latest_stable_version": "10.3.0",
+     "requires_python_change": null
+    },
+    {
+     "notes": "Both stable releases specify Python >=3.10. PyPI HTML release pages triggered a Client Challenge; release requirements and upload timestamps were confirmed using the version-specific PyPI JSON pages.",
+     "status": "verified",
+     "vendor": "Qdrant",
+     "sources": [
+      "https://pypi.org/project/qdrant-client/",
+      "https://pypi.org/pypi/qdrant-client/json",
+      "https://pypi.org/pypi/qdrant-client/1.20.0/json",
+      "https://pypi.org/pypi/qdrant-client/1.19.1/json"
+     ],
+     "unverified": [],
+     "pypi_package": "qdrant-client",
+     "releases_in_window": 2,
+     "versions_in_window": [
+      "1.20.0",
+      "1.19.1"
+     ],
+     "latest_stable_version": "1.20.0",
+     "requires_python_change": "unchanged"
+    },
+    {
+     "notes": "The minimum rose from Python >=3.10 in 4.24.1 to >=3.11 in 4.25.0. PyPI HTML release pages triggered a Client Challenge; release requirements and upload timestamps were confirmed using the version-specific PyPI JSON pages.",
+     "status": "verified",
+     "vendor": "Weaviate",
+     "sources": [
+      "https://pypi.org/project/weaviate-client/",
+      "https://pypi.org/pypi/weaviate-client/json",
+      "https://pypi.org/pypi/weaviate-client/4.25.0/json",
+      "https://pypi.org/pypi/weaviate-client/4.24.1/json"
+     ],
+     "unverified": [],
+     "pypi_package": "weaviate-client",
+     "releases_in_window": 4,
+     "versions_in_window": [
+      "4.25.0",
+      "4.24.1",
+      "4.24.0",
+      "4.23.1"
+     ],
+     "latest_stable_version": "4.25.0",
+     "requires_python_change": "raised"
+    },
+    {
+     "notes": "Both 1.5.9 and the preceding stable release, 1.5.8, specify Python >=3.9. PyPI HTML release pages triggered a Client Challenge; release requirements and upload timestamps were confirmed using the version-specific PyPI JSON pages.",
+     "status": "verified",
+     "vendor": "Chroma",
+     "sources": [
+      "https://pypi.org/project/chromadb/",
+      "https://pypi.org/pypi/chromadb/json",
+      "https://pypi.org/pypi/chromadb/1.5.9/json",
+      "https://pypi.org/pypi/chromadb/1.5.8/json"
+     ],
+     "unverified": [],
+     "pypi_package": "chromadb",
+     "releases_in_window": 0,
+     "versions_in_window": [],
+     "latest_stable_version": "1.5.9",
+     "requires_python_change": "unchanged"
+    },
+    {
+     "notes": "The PyPI project page describes the Python SDK and links to moss.dev and the usemoss/moss repository. Both stable releases specify Python >=3.10. The count includes each version with at least one upload in the inclusive UTC range.",
+     "status": "verified",
+     "vendor": "Moss",
+     "sources": [
+      "https://pypi.org/project/moss/",
+      "https://pypi.org/pypi/moss/json",
+      "https://pypi.org/pypi/moss/1.26.0/json",
+      "https://pypi.org/pypi/moss/1.25.0/json"
+     ],
+     "unverified": [],
+     "pypi_package": "moss",
+     "releases_in_window": 22,
+     "versions_in_window": [
+      "1.26.0",
+      "1.25.0",
+      "1.24.0",
+      "1.23.0",
+      "1.22.0",
+      "1.21.0",
+      "1.20.0",
+      "1.19.0",
+      "1.18.0",
+      "1.17.0",
+      "1.16.1",
+      "1.16.0",
+      "1.15.1",
+      "1.15.0",
+      "1.14.0",
+      "1.13.0",
+      "1.12.0",
+      "1.11.0",
+      "1.10.0",
+      "1.9.1",
+      "1.9.0",
+      "1.8.0"
+     ],
+     "latest_stable_version": "1.26.0",
+     "requires_python_change": "unchanged"
+    },
+    {
+     "notes": "The stable release immediately before 3.0.3 by PyPI upload-history order is 2.6.18, uploaded Nov 6, 2026. Its minimum is Python >=3.8, compared with >=3.9 for 3.0.3.",
+     "status": "verified",
+     "vendor": "Milvus (Zilliz)",
+     "sources": [
+      "https://pypi.org/project/pymilvus/",
+      "https://pypi.org/pypi/pymilvus/json",
+      "https://pypi.org/pypi/pymilvus/3.0.3/json",
+      "https://pypi.org/pypi/pymilvus/2.6.18/json"
+     ],
+     "unverified": [],
+     "pypi_package": "pymilvus",
+     "releases_in_window": 3,
+     "versions_in_window": [
+      "3.0.3",
+      "2.6.18",
+      "3.0.2"
+     ],
+     "latest_stable_version": "3.0.3",
+     "requires_python_change": "raised"
+    },
+    {
+     "notes": "Both stable releases specify Python >=3.10. PyPI HTML release pages triggered a Client Challenge; release requirements and upload timestamps were confirmed using the version-specific PyPI JSON pages.",
+     "status": "verified",
+     "vendor": "LanceDB",
+     "sources": [
+      "https://pypi.org/project/lancedb/",
+      "https://pypi.org/pypi/lancedb/json",
+      "https://pypi.org/pypi/lancedb/0.41.0/json",
+      "https://pypi.org/pypi/lancedb/0.40.0/json"
+     ],
+     "unverified": [],
+     "pypi_package": "lancedb",
+     "releases_in_window": 4,
+     "versions_in_window": [
+      "0.41.0",
+      "0.40.0",
+      "0.39.0",
+      "0.38.0"
+     ],
+     "latest_stable_version": "0.41.0",
+     "requires_python_change": "unchanged"
+    },
+    {
+     "notes": "Both stable releases specify Python >=3.11. PyPI HTML release pages triggered a Client Challenge; release requirements and upload timestamps were confirmed using the version-specific PyPI JSON pages.",
+     "status": "verified",
+     "vendor": "Turbopuffer",
+     "sources": [
+      "https://pypi.org/project/turbopuffer/",
+      "https://pypi.org/pypi/turbopuffer/json",
+      "https://pypi.org/pypi/turbopuffer/3.1.0/json",
+      "https://pypi.org/pypi/turbopuffer/3.0.0/json"
+     ],
+     "unverified": [],
+     "pypi_package": "turbopuffer",
+     "releases_in_window": 9,
+     "versions_in_window": [
+      "3.1.0",
+      "3.0.0",
+      "2.14.0",
+      "2.13.0",
+      "2.12.0",
+      "2.11.0",
+      "2.10.2",
+      "2.10.1",
+      "2.10.0"
+     ],
+     "latest_stable_version": "3.1.0",
+     "requires_python_change": "unchanged"
+    },
+    {
+     "notes": "DuckDuckGo searches did not surface a Zyphrelon-specific PyPI project. The PyPI search page was challenged, so the failed exact and plausible-name lookups do not prove that no package exists under an unrelated name.",
+     "status": "not_found",
+     "vendor": "Zyphrelon Vector Cloud",
+     "sources": [
+      "https://pypi.org/search/?q=zyphrelon",
+      "https://pypi.org/pypi/zyphrelon/json",
+      "https://pypi.org/pypi/zyphrelon-vector-cloud/json",
+      "https://pypi.org/pypi/zyphrelon-vector/json",
+      "https://pypi.org/pypi/zyphrelon-sdk/json",
+      "https://pypi.org/pypi/zyphrelon-client/json"
+     ],
+     "unverified": [
+      "pypi_package: no official package identified; exact and plausible package-name lookups returned 404, and PyPI search showed a Client Challenge.",
+      "latest_stable_version: no confirmed project to inspect.",
+      "releases_in_window: no confirmed project release history.",
+      "versions_in_window: no confirmed project release history.",
+      "requires_python_change: no confirmed stable release pages or metadata to compare."
+     ],
+     "pypi_package": null,
+     "releases_in_window": null,
+     "versions_in_window": [],
+     "latest_stable_version": null,
+     "requires_python_change": null
+    }
+   ]
+  },
+  "output_text": "{\n  \"as_of\": \"2026-11-27\",\n  \"vendors\": [\n    {\n      \"vendor\": \"Pinecone\",\n      \"pypi_package\": \"pinecone\",\n      \"latest_stable_version\": \"10.3.0\",\n      \"releases_in_window\": 5,\n      \"versions_in_window\": [\n        \"10.3.0\",\n        \"10.2.0\",\n        \"10.1.0\",\n        \"10.1.0rc1\",\n        \"10.0.0\"\n      ],\n      \"requires_python_change\": null,\n      \"sources\": [\n        \"https://pypi.org/project/pinecone/\",\n        \"https://pypi.org/pypi/pinecone/json\",\n        \"https://pypi.org/pypi/pinecone/10.3.0/json\",\n        \"https://pypi.org/pypi/pinecone/10.2.0/json\",\n        \"https://pypi.org/pypi/pinecone-client/json\"\n      ],\n      \"status\": \"partial\",\n      \"unverified\": [\n        \"requires_python_change: the 10.2.0 PyPI JSON metadata did not provide a Requires-Python value, and its HTML release page returned a Client Challenge, so the minimum cannot be compared with 10.3.0.\"\n      ],\n      \"notes\": \"PyPI identifies pinecone as the SDK; pinecone-client is marked deprecated. The window count includes each version with at least one upload in the inclusive UTC range, including the pre-release.\"\n    },\n    {\n      \"vendor\": \"Qdrant\",\n      \"pypi_package\": \"qdrant-client\",\n      \"latest_stable_version\": \"1.20.0\",\n      \"releases_in_window\": 2,\n      \"versions_in_window\": [\n        \"1.20.0\",\n        \"1.19.1\"\n      ],\n      \"requires_python_change\": \"unchanged\",\n      \"sources\": [\n        \"https://pypi.org/project/qdrant-client/\",\n        \"https://pypi.org/pypi/qdrant-client/json\",\n        \"https://pypi.org/pypi/qdrant-client/1.20.0/json\",\n        \"https://pypi.org/pypi/qdrant-client/1.19.1/json\"\n      ],\n      \"status\": \"verified\",\n      \"unverified\": [],\n      \"notes\": \"Both stable releases specify Python >=3.10. PyPI HTML release pages triggered a Client Challenge; release requirements and upload timestamps were confirmed using the version-specific PyPI JSON pages.\"\n    },\n    {\n      \"vendor\": \"Weaviate\",\n      \"pypi_package\": \"weaviate-client\",\n      \"latest_stable_version\": \"4.25.0\",\n      \"releases_in_window\": 4,\n      \"versions_in_window\": [\n        \"4.25.0\",\n        \"4.24.1\",\n        \"4.24.0\",\n        \"4.23.1\"\n      ],\n      \"requires_python_change\": \"raised\",\n      \"sources\": [\n        \"https://pypi.org/project/weaviate-client/\",\n        \"https://pypi.org/pypi/weaviate-client/json\",\n        \"https://pypi.org/pypi/weaviate-client/4.25.0/json\",\n        \"https://pypi.org/pypi/weaviate-client/4.24.1/json\"\n      ],\n      \"status\": \"verified\",\n      \"unverified\": [],\n      \"notes\": \"The minimum rose from Python >=3.10 in 4.24.1 to >=3.11 in 4.25.0. PyPI HTML release pages triggered a Client Challenge; release requirements and upload timestamps were confirmed using the version-specific PyPI JSON pages.\"\n    },\n    {\n      \"vendor\": \"Chroma\",\n      \"pypi_package\": \"chromadb\",\n      \"latest_stable_version\": \"1.5.9\",\n      \"releases_in_window\": 0,\n      \"versions_in_window\": [],\n      \"requires_python_change\": \"unchanged\",\n      \"sources\": [\n        \"https://pypi.org/project/chromadb/\",\n        \"https://pypi.org/pypi/chromadb/json\",\n        \"https://pypi.org/pypi/chromadb/1.5.9/json\",\n        \"https://pypi.org/pypi/chromadb/1.5.8/json\"\n      ],\n      \"status\": \"verified\",\n      \"unverified\": [],\n      \"notes\": \"Both 1.5.9 and the preceding stable release, 1.5.8, specify Python >=3.9. PyPI HTML release pages triggered a Client Challenge; release requirements and upload timestamps were confirmed using the version-specific PyPI JSON pages.\"\n    },\n    {\n      \"vendor\": \"Moss\",\n      \"pypi_package\": \"moss\",\n      \"latest_stable_version\": \"1.26.0\",\n      \"releases_in_window\": 22,\n      \"versions_in_window\": [\n        \"1.26.0\",\n        \"1.25.0\",\n        \"1.24.0\",\n        \"1.23.0\",\n        \"1.22.0\",\n        \"1.21.0\",\n        \"1.20.0\",\n        \"1.19.0\",\n        \"1.18.0\",\n        \"1.17.0\",\n        \"1.16.1\",\n        \"1.16.0\",\n        \"1.15.1\",\n        \"1.15.0\",\n        \"1.14.0\",\n        \"1.13.0\",\n        \"1.12.0\",\n        \"1.11.0\",\n        \"1.10.0\",\n        \"1.9.1\",\n        \"1.9.0\",\n        \"1.8.0\"\n      ],\n      \"requires_python_change\": \"unchanged\",\n      \"sources\": [\n        \"https://pypi.org/project/moss/\",\n        \"https://pypi.org/pypi/moss/json\",\n        \"https://pypi.org/pypi/moss/1.26.0/json\",\n        \"https://pypi.org/pypi/moss/1.25.0/json\"\n      ],\n      \"status\": \"verified\",\n      \"unverified\": [],\n      \"notes\": \"The PyPI project page describes the Python SDK and links to moss.dev and the usemoss/moss repository. Both stable releases specify Python >=3.10. The count includes each version with at least one upload in the inclusive UTC range.\"\n    },\n    {\n      \"vendor\": \"Milvus (Zilliz)\",\n      \"pypi_package\": \"pymilvus\",\n      \"latest_stable_version\": \"3.0.3\",\n      \"releases_in_window\": 3,\n      \"versions_in_window\": [\n        \"3.0.3\",\n        \"2.6.18\",\n        \"3.0.2\"\n      ],\n      \"requires_python_change\": \"raised\",\n      \"sources\": [\n        \"https://pypi.org/project/pymilvus/\",\n        \"https://pypi.org/pypi/pymilvus/json\",\n        \"https://pypi.org/pypi/pymilvus/3.0.3/json\",\n        \"https://pypi.org/pypi/pymilvus/2.6.18/json\"\n      ],\n      \"status\": \"verified\",\n      \"unverified\": [],\n      \"notes\": \"The stable release immediately before 3.0.3 by PyPI upload-history order is 2.6.18, uploaded Nov 6, 2026. Its minimum is Python >=3.8, compared with >=3.9 for 3.0.3.\"\n    },\n    {\n      \"vendor\": \"LanceDB\",\n      \"pypi_package\": \"lancedb\",\n      \"latest_stable_version\": \"0.41.0\",\n      \"releases_in_window\": 4,\n      \"versions_in_window\": [\n        \"0.41.0\",\n        \"0.40.0\",\n        \"0.39.0\",\n        \"0.38.0\"\n      ],\n      \"requires_python_change\": \"unchanged\",\n      \"sources\": [\n        \"https://pypi.org/project/lancedb/\",\n        \"https://pypi.org/pypi/lancedb/json\",\n        \"https://pypi.org/pypi/lancedb/0.41.0/json\",\n        \"https://pypi.org/pypi/lancedb/0.40.0/json\"\n      ],\n      \"status\": \"verified\",\n      \"unverified\": [],\n      \"notes\": \"Both stable releases specify Python >=3.10. PyPI HTML release pages triggered a Client Challenge; release requirements and upload timestamps were confirmed using the version-specific PyPI JSON pages.\"\n    },\n    {\n      \"vendor\": \"Turbopuffer\",\n      \"pypi_package\": \"turbopuffer\",\n      \"latest_stable_version\": \"3.1.0\",\n      \"releases_in_window\": 9,\n      \"versions_in_window\": [\n        \"3.1.0\",\n        \"3.0.0\",\n        \"2.14.0\",\n        \"2.13.0\",\n        \"2.12.0\",\n        \"2.11.0\",\n        \"2.10.2\",\n        \"2.10.1\",\n        \"2.10.0\"\n      ],\n      \"requires_python_change\": \"unchanged\",\n      \"sources\": [\n        \"https://pypi.org/project/turbopuffer/\",\n        \"https://pypi.org/pypi/turbopuffer/json\",\n        \"https://pypi.org/pypi/turbopuffer/3.1.0/json\",\n        \"https://pypi.org/pypi/turbopuffer/3.0.0/json\"\n      ],\n      \"status\": \"verified\",\n      \"unverified\": [],\n      \"notes\": \"Both stable releases specify Python >=3.11. PyPI HTML release pages triggered a Client Challenge; release requirements and upload timestamps were confirmed using the version-specific PyPI JSON pages.\"\n    },\n    {\n      \"vendor\": \"Zyphrelon Vector Cloud\",\n      \"pypi_package\": null,\n      \"latest_stable_version\": null,\n      \"releases_in_window\": null,\n      \"versions_in_window\": [],\n      \"requires_python_change\": null,\n      \"sources\": [\n        \"https://pypi.org/search/?q=zyphrelon\",\n        \"https://pypi.org/pypi/zyphrelon/json\",\n        \"https://pypi.org/pypi/zyphrelon-vector-cloud/json\",\n        \"https://pypi.org/pypi/zyphrelon-vector/json\",\n        \"https://pypi.org/pypi/zyphrelon-sdk/json\",\n        \"https://pypi.org/pypi/zyphrelon-client/json\"\n      ],\n      \"status\": \"not_found\",\n      \"unverified\": [\n        \"pypi_package: no official package identified; exact and plausible package-name lookups returned 404, and PyPI search showed a Client Challenge.\",\n        \"latest_stable_version: no confirmed project to inspect.\",\n        \"releases_in_window: no confirmed project release history.\",\n        \"versions_in_window: no confirmed project release history.\",\n        \"requires_python_change: no confirmed stable release pages or metadata to compare.\"\n      ],\n      \"notes\": \"DuckDuckGo searches did not surface a Zyphrelon-specific PyPI project. The PyPI search page was challenged, so the failed exact and plausible-name lookups do not prove that no package exists under an unrelated name.\"\n    }\n  ],\n  \"summary\": \"Moss led the window with 22 releases, followed by Turbopuffer with 9 and Pinecone with 5. No official PyPI SDK could be verified for Zyphrelon Vector Cloud; Pinecone's Requires-Python change is also unconfirmed because the 10.2.0 metadata omitted that value.\"\n}"
+ },
+ "verification": {
+  "method": "output_schema",
+  "passed": true
+ },
+ "usage": {
+  "cost": {
+   "model_usd": 0.03937,
+   "total_usd": 0.041037,
+   "browser_usd": 0.0016666666666666668,
+   "traffic_usd": null
+  },
+  "steps": 19,
+  "cost_usd": 0.03937,
+  "model_calls": 26,
+  "input_tokens": 456125,
+  "output_tokens": 29888,
+  "browser_minutes": 4.03,
+  "browser_seconds": 242,
+  "browser_traffic_mb": null,
+  "cached_input_tokens": 397935
+ },
+ "error": null,
+ "trace_available": true,
+ "video_available": true,
+ "video_state": "ready",
+ "live_url": null,
+ "cancel_requested": false,
+ "created_at": "2026-11-27T11:45:31.668392+00:00",
+ "started_at": "2026-11-27T11:45:31.684252+00:00",
+ "finished_at": "2026-11-27T11:49:34.755443+00:00",
+ "files_expire_at": "2026-12-04T11:49:34.755443+00:00",
+ "zero_data_retention": false,
+ "content_expires_at": null,
+ "content_deleted_at": null,
+ "webhook": null
+}

@@ -1,0 +1,12 @@
+[INFO ] G moss/fastlane-1 | plain body | repeat after 0s: 10/10 repeats were cache hits
+[INFO ] G moss/fastlane-1 | plain body | repeat after 4s: 10/10 repeats were cache hits
+[INFO ] G moss/fastlane-1 | + instructions + max_output_tokens=80 | repeat after 0s: 10/10 repeats were cache hits
+[INFO ] G moss/fastlane-1 | + instructions + max_output_tokens=80 | repeat after 4s: 10/10 repeats were cache hits
+[INFO ] G moss/fastlane-1 | + reasoning.effort=none | repeat after 0s: 10/10 repeats were cache hits
+[INFO ] G moss/fastlane-1 | + reasoning.effort=none | repeat after 4s: 10/10 repeats were cache hits
+[INFO ] G anthropic/claude-haiku-5.5 | plain body | repeat after 0s: 4/10 repeats were cache hits
+[INFO ] G anthropic/claude-haiku-5.5 | plain body | repeat after 4s: 9/10 repeats were cache hits
+[INFO ] G anthropic/claude-haiku-5.5 | + instructions + max_output_tokens=80 | repeat after 0s: 6/10 repeats were cache hits
+[INFO ] G anthropic/claude-haiku-5.5 | + instructions + max_output_tokens=80 | repeat after 4s: 5/10 repeats were cache hits
+[INFO ] G anthropic/claude-haiku-5.5 | + reasoning.effort=none | repeat after 0s: 5/10 repeats were cache hits
+[INFO ] G anthropic/claude-haiku-5.5 | + reasoning.effort=none | repeat after 4s: 5/10 repeats were cache hits

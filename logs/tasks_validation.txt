@@ -1,0 +1,14 @@
+
+=== validation (no spend)
+missing goal: 400 {"message": "goal must be text of 1 to 20000 characters", "type": "invalid_request_error", "code": "invalid_request_error", "request_id": "e81e779ef0484cf48a3ba692e52cd31
+bad env type: 400 {"message": "environment must be {\"type\": \"browser\"}; v0 runs browser tasks only", "type": "invalid_request_error", "code": "invalid_request_error", "request_id": "f1
+unknown field: 400 {"message": "Unknown field foo", "type": "invalid_request_error", "code": "invalid_request_error", "request_id": "1cfc5392bff74feaba1b1aab1c3bc8f5"}
+bad model: 400 {"message": "model must be a Moss tier or a Moss catalog model that tasks serve: moss-advanced, moss-balanced, moss-balanced-handoff, moss-fast, moss-fast-beta, anthropic
+max_cost below min: 400 {"message": "limits.max_cost_usd must be a number from 0.01 to 50", "type": "invalid_request_error", "code": "invalid_request_error", "request_id": "146d1d955fdf42a499cbd
+runtime below 60: 400 {"message": "limits.max_runtime_seconds must be a number from 60 to 7200", "type": "invalid_request_error", "code": "invalid_request_error", "request_id": "7b9193d566ab49
+schema not object: 400 {"message": "output_schema must describe one JSON object: its \"type\" must be \"object\". For a list, put it in a property, such as {\"type\": \"object\", \"properties\"
+bad start_url: 400 {"message": "environment.start_url must be an http or https URL, or a host such as example.com", "type": "invalid_request_error", "code": "invalid_request_error", "reques
+goal 20001 chars: 400 {"message": "goal must be text of 1 to 20000 characters", "type": "invalid_request_error", "code": "invalid_request_error", "request_id": "703aaf7a1b7f4981bf3e43b48d7c141
+body 300KiB: 413 {'error': {'message': 'The request body is larger than 262144 bytes', 'type': 'invalid_request_error', 'code': 'invalid_request_error', 'request_id': 
+unknown id: 404 {'error': {'message': 'No task with this id in this project', 'type': 'not_found_error', 'code': 'not_found_error', 'request_id': 'c5fd931f33ce4b43a5c
+malformed id: 404 {'error': {'message': 'No task with this id in this project', 'type': 'not_found_error', 'code': 'not_found_error', 'request_id': 'de0a10c5cf0b497bb85

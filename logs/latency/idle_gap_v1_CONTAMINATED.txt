@@ -1,0 +1,9 @@
+           initial: retrieve_ms=14.3  ttft_ms=273 status=200
+     after_0s_idle: retrieve_ms=12.6  ttft_ms=248 status=200
+ followup_after_0s: retrieve_ms=13.0  ttft_ms=247 status=200
+    after_15s_idle: retrieve_ms=13.0  ttft_ms=544 status=200
+followup_after_15s: retrieve_ms=12.2  ttft_ms=261 status=200
+    after_45s_idle: retrieve_ms=13.3  ttft_ms=346 status=200
+followup_after_45s: retrieve_ms=14.0  ttft_ms=253 status=200
+    after_90s_idle: retrieve_ms=13.6  ttft_ms=375 status=200
+followup_after_90s: retrieve_ms=12.3  ttft_ms=272 status=200

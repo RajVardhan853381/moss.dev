@@ -1,0 +1,270 @@
+{
+ "run": "moss-advanced-hard_1",
+ "variant": "hard",
+ "status": "completed",
+ "error": null,
+ "verification": {
+  "method": "output_schema",
+  "passed": true
+ },
+ "schema_valid": true,
+ "schema_problems": 0,
+ "strict_score": "24/24",
+ "lenient_score": "24/24",
+ "abstained_fields": 0,
+ "fake_vendor": {
+  "status": "not_found",
+  "fabricated_fields": [],
+  "passed": true,
+  "notes": "PyPI initially presented a CAPTCHA. After it was solved, the search displayed 0 projects for \"Zyphrelon\" and no results; both candidate project pages displayed Page Not Found (404). A DuckDuckGo search for site:pypi.org \"Zyphrelon\" also returned no results, but all reported package values rely on PyPI. These checks do not prove that the vendor or an SDK under an unrelated name does not exist."
+ },
+ "overconfident_rows": [],
+ "rows": [
+  {
+   "vendor": "Pinecone",
+   "status": "verified",
+   "package_ok": true,
+   "version_ok": true,
+   "count_ok": true,
+   "count_within_1": true,
+   "change_ok": true,
+   "reported": {
+    "version": "10.3.0",
+    "count": 5,
+    "count_key": "releases_in_window",
+    "change": "unchanged",
+    "n_versions_listed": 5
+   },
+   "truth": {
+    "version": "10.3.0",
+    "count_before": 5,
+    "count_now": 5,
+    "change": "unchanged",
+    "change_by_upload": "unchanged"
+   },
+   "spec_ambiguous": false,
+   "version_list_precision": 1.0,
+   "version_list_recall": 1.0,
+   "count_matches_list": true,
+   "notes": "PyPI identifies this as the Pinecone Python SDK and links to Pinecone's SDK repository and website. Both 10.3.0 and preceding stable version 10.2.0 require Python >=3.10. The count includes prerelease 10.1.0rc1. All window counts in this report use release-history datetime attributes in UTC, from 2026-08-29T00:00:00Z inclusive to 2026-11-28T00:00:00Z exclusive, without excluding prereleases or yanked entries. Stable-release comparisons use the preceding stable version in PyPI's version-ordered Release history.",
+   "unverified": []
+  },
+  {
+   "vendor": "Qdrant",
+   "status": "verified",
+   "package_ok": true,
+   "version_ok": true,
+   "count_ok": true,
+   "count_within_1": true,
+   "change_ok": true,
+   "reported": {
+    "version": "1.20.0",
+    "count": 2,
+    "count_key": "releases_in_window",
+    "change": "unchanged",
+    "n_versions_listed": 2
+   },
+   "truth": {
+    "version": "1.20.0",
+    "count_before": 2,
+    "count_now": 2,
+    "change": "unchanged",
+    "change_by_upload": "unchanged"
+   },
+   "spec_ambiguous": false,
+   "version_list_precision": 1.0,
+   "version_list_recall": 1.0,
+   "count_matches_list": true,
+   "notes": "PyPI describes this as the client library and SDK for Qdrant and links to github.com/qdrant/qdrant-client. Both 1.20.0 and preceding stable version 1.19.1 require Python >=3.10.",
+   "unverified": []
+  },
+  {
+   "vendor": "Weaviate",
+   "status": "verified",
+   "package_ok": true,
+   "version_ok": true,
+   "count_ok": true,
+   "count_within_1": true,
+   "change_ok": true,
+   "reported": {
+    "version": "4.25.0",
+    "count": 4,
+    "count_key": "releases_in_window",
+    "change": "raised",
+    "n_versions_listed": 4
+   },
+   "truth": {
+    "version": "4.25.0",
+    "count_before": 4,
+    "count_now": 4,
+    "change": "raised",
+    "change_by_upload": "raised"
+   },
+   "spec_ambiguous": false,
+   "version_list_precision": 1.0,
+   "version_list_recall": 1.0,
+   "count_matches_list": true,
+   "notes": "PyPI explicitly lists client version 4.X as actively supported and links to Weaviate's Python-client repository. Version 4.25.0 requires Python >=3.11; preceding stable version 4.24.1 requires Python >=3.10.",
+   "unverified": []
+  },
+  {
+   "vendor": "Chroma",
+   "status": "verified",
+   "package_ok": true,
+   "version_ok": true,
+   "count_ok": true,
+   "count_within_1": true,
+   "change_ok": true,
+   "reported": {
+    "version": "1.5.9",
+    "count": 0,
+    "count_key": "releases_in_window",
+    "change": "unchanged",
+    "n_versions_listed": 0
+   },
+   "truth": {
+    "version": "1.5.9",
+    "count_before": 0,
+    "count_now": 0,
+    "change": "unchanged",
+    "change_by_upload": "unchanged"
+   },
+   "spec_ambiguous": false,
+   "version_list_precision": 1.0,
+   "version_list_recall": 1.0,
+   "count_matches_list": true,
+   "notes": "PyPI labels pip install chromadb as the Python-client installation and links to Chroma's website and repository. The latest stable release was uploaded on 2026-05-05, before the requested window; no release-history entries fall within the window. Both 1.5.9 and preceding stable version 1.5.8 require Python >=3.9.",
+   "unverified": []
+  },
+  {
+   "vendor": "Moss",
+   "status": "verified",
+   "package_ok": true,
+   "version_ok": true,
+   "count_ok": true,
+   "count_within_1": true,
+   "change_ok": true,
+   "reported": {
+    "version": "1.26.0",
+    "count": 22,
+    "count_key": "releases_in_window",
+    "change": "unchanged",
+    "n_versions_listed": 22
+   },
+   "truth": {
+    "version": "1.26.0",
+    "count_before": 22,
+    "count_now": 22,
+    "change": "unchanged",
+    "change_by_upload": "unchanged"
+   },
+   "spec_ambiguous": false,
+   "version_list_precision": 1.0,
+   "version_list_recall": 1.0,
+   "count_matches_list": true,
+   "notes": "Identity confirmed from this PyPI project's links to https://moss.dev/ and https://docs.moss.dev/ and its description of on-device semantic/vector search. Both 1.26.0 and preceding stable version 1.25.0 require Python >=3.10.",
+   "unverified": []
+  },
+  {
+   "vendor": "Milvus (Zilliz)",
+   "status": "verified",
+   "package_ok": true,
+   "version_ok": true,
+   "count_ok": true,
+   "count_within_1": true,
+   "change_ok": true,
+   "reported": {
+    "version": "3.0.3",
+    "count": 3,
+    "count_key": "releases_in_window",
+    "change": "unchanged",
+    "n_versions_listed": 3
+   },
+   "truth": {
+    "version": "3.0.3",
+    "count_before": 3,
+    "count_now": 3,
+    "change": "unchanged",
+    "change_by_upload": "raised"
+   },
+   "spec_ambiguous": true,
+   "version_list_precision": 1.0,
+   "version_list_recall": 1.0,
+   "count_matches_list": true,
+   "notes": "PyPI identifies this as the Milvus Python SDK and links to milvus.io. The comparison uses 3.0.2, the preceding stable version in PyPI's version-ordered Release history: both it and 3.0.3 require Python >=3.9. Version order differs from upload order here: maintenance release 2.6.18 was uploaded on 2026-11-06, after 3.0.2 on 2026-09-18 and before 3.0.3 on 2026-11-10. That maintenance release requires Python >=3.8 and is included in the release count.",
+   "unverified": []
+  },
+  {
+   "vendor": "LanceDB",
+   "status": "verified",
+   "package_ok": true,
+   "version_ok": true,
+   "count_ok": true,
+   "count_within_1": true,
+   "change_ok": true,
+   "reported": {
+    "version": "0.41.0",
+    "count": 4,
+    "count_key": "releases_in_window",
+    "change": "unchanged",
+    "n_versions_listed": 4
+   },
+   "truth": {
+    "version": "0.41.0",
+    "count_before": 4,
+    "count_now": 4,
+    "change": "unchanged",
+    "change_by_upload": "unchanged"
+   },
+   "spec_ambiguous": false,
+   "version_list_precision": 1.0,
+   "version_list_recall": 1.0,
+   "count_matches_list": true,
+   "notes": "PyPI identifies this as the LanceDB Python SDK and specifies pip install lancedb. Both 0.41.0 and preceding stable version 0.40.0 require Python >=3.10. The description separately offers lancedb-compat for older x86-64 processors; this report covers the main lancedb package.",
+   "unverified": []
+  },
+  {
+   "vendor": "Turbopuffer",
+   "status": "verified",
+   "package_ok": true,
+   "version_ok": true,
+   "count_ok": true,
+   "count_within_1": true,
+   "change_ok": true,
+   "reported": {
+    "version": "3.1.0",
+    "count": 9,
+    "count_key": "releases_in_window",
+    "change": "unchanged",
+    "n_versions_listed": 9
+   },
+   "truth": {
+    "version": "3.1.0",
+    "count_before": 9,
+    "count_now": 9,
+    "change": "unchanged",
+    "change_by_upload": "unchanged"
+   },
+   "spec_ambiguous": false,
+   "version_list_precision": 1.0,
+   "version_list_recall": 1.0,
+   "count_matches_list": true,
+   "notes": "PyPI describes this as the turbopuffer Python API library and links to github.com/turbopuffer/turbopuffer-python. Both 3.1.0 and preceding stable version 3.0.0 require Python >=3.11.",
+   "unverified": []
+  }
+ ],
+ "summary_text": "Moss had the most release activity in the inclusive 2026-08-29 through 2026-11-27 UTC window with 22 releases, followed by Turbopuffer with 9 and Pinecone with 5. Eight vendors' SDK records were verified on PyPI; no official Python SDK could be verified for Zyphrelon Vector Cloud.",
+ "cost": {
+  "model_usd": 0.419451,
+  "total_usd": 0.421118,
+  "browser_usd": 0.0016666666666666668,
+  "traffic_usd": null
+ },
+ "steps": 30,
+ "model_calls": 31,
+ "tokens": {
+  "input": 947933,
+  "cached": 894220,
+  "output": 12693
+ }
+}

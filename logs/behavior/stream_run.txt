@@ -1,0 +1,2 @@
+[PASS ] D1 Responses stream: no [DONE], only documented event types, ends with response.completed: done_marker=False undocumented_types=[] last=response.completed n_events=10
+[PASS ] D2 Chat stream ends with usage chunk (empty choices) then [DONE]: done_marker=True last_choices=[] usage=True

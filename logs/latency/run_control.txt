@@ -1,0 +1,9 @@
+0/320 elapsed 1s est_spend $0.007
+50/320 elapsed 37s est_spend $0.026
+100/320 elapsed 76s est_spend $0.047
+150/320 elapsed 110s est_spend $0.066
+200/320 elapsed 149s est_spend $0.083
+250/320 elapsed 188s est_spend $0.101
+300/320 elapsed 227s est_spend $0.123
+main done: 320 calls, est_spend $0.130
+{"est_spend_usd": 0.1298, "calls": 336}

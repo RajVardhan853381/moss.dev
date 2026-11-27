@@ -1,0 +1,3 @@
+[INFO ] H anthropic/claude-haiku-5.5: cache hit vs same serving box: same box: 20/24 hits; different box: 0/0 hits; distinct boxes seen: 1
+[INFO ] H moss/fastlane-1: cache hit vs same serving box: same box: 12/12 hits; different box: 0/0 hits; distinct boxes seen: 1
+[INFO ] H openai/gpt-6-luna: cache hit vs same serving box: same box: 8/24 hits; different box: 0/0 hits; distinct boxes seen: 1

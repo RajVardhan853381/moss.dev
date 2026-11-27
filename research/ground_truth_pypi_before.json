@@ -1,0 +1,89 @@
+{
+ "fetched_utc": "2026-11-27T10:44:58Z",
+ "data": {
+  "pinecone": {
+   "version": "10.3.0",
+   "upload": "2026-11-03T00:12:05.026724Z",
+   "requires_python": ">=3.10",
+   "summary": "Pinecone Python SDK",
+   "home": null,
+   "urls": {
+    "Issues": "https://github.com/pinecone-io/python-sdk/issues",
+    "Source": "https://github.com/pinecone-io/python-sdk"
+   },
+   "yanked": [
+    false
+   ]
+  },
+  "pinecone-client": {
+   "version": "6.0.0",
+   "upload": "2025-02-21T19:47:37.230213Z",
+   "requires_python": "<4.0,>=3.9",
+   "summary": "Pinecone client (DEPRECATED)",
+   "home": "https://www.pinecone.io",
+   "urls": {},
+   "yanked": [
+    false
+   ]
+  },
+  "qdrant-client": {
+   "version": "1.20.0",
+   "upload": "2026-10-22T10:26:14.838659Z",
+   "requires_python": ">=3.10",
+   "summary": "Client library for the Qdrant vector search engine",
+   "home": null,
+   "urls": {
+    "Homepage": "https://github.com/qdrant/qdrant-client",
+    "Repository": "https://github.com/qdrant/qdrant-client"
+   },
+   "yanked": [
+    false
+   ]
+  },
+  "weaviate-client": {
+   "version": "4.25.0",
+   "upload": "2026-11-26T11:47:37.791774Z",
+   "requires_python": ">=3.11",
+   "summary": "A python native Weaviate client",
+   "home": "https://github.com/weaviate/weaviate-python-client",
+   "urls": {
+    "Homepage": "https://github.com/weaviate/weaviate-python-client",
+    "Source": "https://github.com/weaviate/weaviate-python-client",
+    "Tracker": "https://github.com/weaviate/weaviate-python-client/issues"
+   },
+   "yanked": [
+    false
+   ]
+  },
+  "chromadb": {
+   "version": "1.5.9",
+   "upload": "2026-05-05T05:54:48.906852Z",
+   "requires_python": ">=3.9",
+   "summary": "Chroma.",
+   "home": null,
+   "urls": {
+    "Bug Tracker": "https://github.com/chroma-core/chroma/issues",
+    "Homepage": "https://github.com/chroma-core/chroma"
+   },
+   "yanked": [
+    false
+   ]
+  },
+  "moss": {
+   "version": "1.26.0",
+   "upload": "2026-11-23T16:04:53.696735Z",
+   "requires_python": ">=3.10",
+   "summary": "Python SDK for semantic search with on-device AI capabilities, including local-first sessi",
+   "home": null,
+   "urls": {
+    "Repository": "https://github.com/usemoss/moss"
+   },
+   "yanked": [
+    false
+   ]
+  },
+  "zyphrelon-client": "HTTP 404",
+  "zyphrelon": "HTTP 404",
+  "zyphrelon-vector-cloud": "HTTP 404"
+ }
+}

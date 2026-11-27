@@ -1,0 +1,27 @@
+# Moss Inference: work sample (Kumar Rajvardhan)
+
+**Repo:** https://github.com/RajVardhan853381/moss.dev (scripts, raw logs, charts; full report in `results/RESULTS.md`).
+I made a test index in the UI, sent a bit over 2,000 inference requests and 10 research tasks, checked what I could against ground truth, and kept the logs. One mistake I caught early: my first latency test reused the same prompt 5 times, so those numbers measured Moss's reply cache rather than model inference. Everything below uses unique prompts.
+
+## 1. Portal
+The portal is easy enough to navigate. Inside Create Project, a one-line note tells you what lives under a project (indexes, model settings, tasks, logs), and the sidebar items (Configure, Playground, Models, Indexes, Tasks, Analytics, Logs & Traces) correspond directly to the API. Error messages are helpful here too, e.g. hitting the index limit links directly to billing.
+
+Where I wasted time was auth. Because the dashboard shows project ID and key in separate fields while the API expects `id:key` joined together, I got a few 401s across three attempts before it worked. You also don't see plan caps (3 indexes max, 1 crawl job at a time) until an error tells you. It'd help to put a ready-to-copy `id:key` bearer header and curl example next to the key, and display quota limits plus Tasks browser traffic on the Indexes and Tasks pages. Aside from creating the account and grabbing keys, I ran my tests directly against the API.
+
+## 2. Inference API
+On the inference side, OpenAI compatibility is solid, error details are clear, and rate limiting matched the docs during my burst test (30 simultaneous calls: 10 succeeded, 20 got 429 with `Retry-After: 1`). Seeing retrieval latency in `X-Moss-Retrieve-Ms` (11 ms median) is also nice. Testing from a remote Linux machine with a 137 ms network floor, `moss/fastlane-1` streamed its first token in 210 ms median ungrounded and 246-292 ms grounded across two runs, beating the vendor models proxied behind the same endpoint (490-700 ms) by 2-3x. Adding an index raised accuracy on 23 factual doc questions from 0% to 85%, and fastlane answered "I do not know" on every miss instead of fabricating numbers.
+
+What bugged me: there is no server-side TTFT header, so a user has no way to verify Moss's "under 200 ms" claim from outside. TTFT also climbs quickly with prompt length (0.6 s at 8k tokens, 2.2 s at 31k, 11 s at 118k) despite the 262k window. The reply cache isn't mentioned in the inference docs either; vendor models appear to populate it asynchronously after a short delay, and after updating an index, grounded responses stayed stale for up to ~55 s even after the build reported `completed`.
+
+Building the index is where I ran into the most trouble. Moss's crawler fetched 1 out of 25 allowed pages, and 45% of the resulting chunks were Next.js/MDX hydration code. The very first query against a fresh index took 815 ms just for retrieval, and quota limits return HTTP 429 the same way rate limits do. A couple of minor doc issues too: the overview page refers to an `indexes` parameter, but the HTTP endpoint rejects `indexes` in the body and requires an `X-Moss-Indexes` header; also, GPT-6 Luna returns an empty string under low `max_output_tokens`.
+
+If I were prioritizing fixes: expose server-side TTFT next to `X-Moss-Retrieve-Ms` alongside a latency table by input size, add headers for cache hit/miss and index version, wait to mark index builds `completed` until updates are actually searchable, fix the crawler to follow links and prefer `.md` pages, stop using HTTP 429 for plan limits, and add top-k plus keyword-weighting knobs (15% of my grounding misses were exact tokens like header names).
+
+## 3. Tasks API
+For Tasks, I wrote two research suites and ran all three tiers: 6 vendors with deliberate edge cases (deprecated `pinecone-client` vs `pinecone`, Moss's GitHub "Latest" release pointing to its iOS SDK, and one fictional vendor), plus 9 vendors where the model had to count PyPI uploads inside a date window. That gave 10 runs to score against PyPI JSON and live GitHub pages, along with separate validation, idempotency, cancellation, and queueing checks.
+
+Answer quality was consistently good. Every run got 30/30 or 24/24 except one honest null, none of the tiers invented the fake vendor, and the agents flagged ambiguities on their own (Moss's iOS "Latest" tag, and Milvus having two parallel release branches). Runs cost $0.04-0.54 and took 4-6 minutes; idempotency and cancel behaved as documented.
+
+The catch was schema reliability on `moss-fast`. One of its 6 runs took 10 minutes at 3x normal spend and output invalid JSON against its schema (20 errors, mostly renamed keys) while still marking status as `completed`. Earlier, a required string field pushed an agent to put "Could not verify" inside a phone-number field and pass validation anyway. The three tiers also didn't separate on accuracy: `moss-fast` cost ~10x less, while `balanced` and `advanced` gave almost the same cost and runtime on the hard task (~$0.41, 5 min). Two runs also reported completing a PyPI human check, which needs clear documentation, and browser-traffic costs take hours to post. Retrying or failing on schema errors, returning step logs alongside screenshots, and reporting traffic costs faster would make Tasks much easier to rely on.
+
+*Not tested: voice workloads, large indexes, long tasks, and prompt injection. Sample sizes are 1-3 runs per cell, so tier differences are only rough indications.*

@@ -1,0 +1,270 @@
+{
+ "run": "moss-fast-hard_3",
+ "variant": "hard",
+ "status": "completed",
+ "error": null,
+ "verification": {
+  "method": "output_schema",
+  "passed": true
+ },
+ "schema_valid": true,
+ "schema_problems": 0,
+ "strict_score": "24/24",
+ "lenient_score": "24/24",
+ "abstained_fields": 0,
+ "fake_vendor": {
+  "status": "not_found",
+  "fabricated_fields": [],
+  "passed": true,
+  "notes": "DuckDuckGo searches did not surface a Zyphrelon SDK; PyPI's exact simple-index lookup returned 404. The PyPI search and candidate project pages presented a challenge, so the absence of an SDK could not be exhaustively confirmed."
+ },
+ "overconfident_rows": [],
+ "rows": [
+  {
+   "vendor": "Pinecone",
+   "status": "verified",
+   "package_ok": true,
+   "version_ok": true,
+   "count_ok": true,
+   "count_within_1": true,
+   "change_ok": true,
+   "reported": {
+    "version": "10.3.0",
+    "count": 5,
+    "count_key": "releases_in_window",
+    "change": "unchanged",
+    "n_versions_listed": 5
+   },
+   "truth": {
+    "version": "10.3.0",
+    "count_before": 5,
+    "count_now": 5,
+    "change": "unchanged",
+    "change_by_upload": "unchanged"
+   },
+   "spec_ambiguous": false,
+   "version_list_precision": 1.0,
+   "version_list_recall": 1.0,
+   "count_matches_list": true,
+   "notes": "Count includes the pre-release 10.1.0rc1. The 10.2.0 HTML release page returned a PyPI challenge; its Requires Python value was confirmed from the PyPI release JSON record.",
+   "unverified": []
+  },
+  {
+   "vendor": "Qdrant",
+   "status": "verified",
+   "package_ok": true,
+   "version_ok": true,
+   "count_ok": true,
+   "count_within_1": true,
+   "change_ok": true,
+   "reported": {
+    "version": "1.20.0",
+    "count": 2,
+    "count_key": "releases_in_window",
+    "change": "unchanged",
+    "n_versions_listed": 2
+   },
+   "truth": {
+    "version": "1.20.0",
+    "count_before": 2,
+    "count_now": 2,
+    "change": "unchanged",
+    "change_by_upload": "unchanged"
+   },
+   "spec_ambiguous": false,
+   "version_list_precision": 1.0,
+   "version_list_recall": 1.0,
+   "count_matches_list": true,
+   "notes": "The 1.20.0 HTML release page returned a PyPI challenge; its Requires Python value was confirmed from the PyPI release JSON record.",
+   "unverified": []
+  },
+  {
+   "vendor": "Weaviate",
+   "status": "verified",
+   "package_ok": true,
+   "version_ok": true,
+   "count_ok": true,
+   "count_within_1": true,
+   "change_ok": true,
+   "reported": {
+    "version": "4.25.0",
+    "count": 4,
+    "count_key": "releases_in_window",
+    "change": "raised",
+    "n_versions_listed": 4
+   },
+   "truth": {
+    "version": "4.25.0",
+    "count_before": 4,
+    "count_now": 4,
+    "change": "raised",
+    "change_by_upload": "raised"
+   },
+   "spec_ambiguous": false,
+   "version_list_precision": 1.0,
+   "version_list_recall": 1.0,
+   "count_matches_list": true,
+   "notes": "Requires Python changed from >=3.10 on 4.24.1 to >=3.11 on 4.25.0.",
+   "unverified": []
+  },
+  {
+   "vendor": "Chroma",
+   "status": "verified",
+   "package_ok": true,
+   "version_ok": true,
+   "count_ok": true,
+   "count_within_1": true,
+   "change_ok": true,
+   "reported": {
+    "version": "1.5.9",
+    "count": 0,
+    "count_key": "releases_in_window",
+    "change": "unchanged",
+    "n_versions_listed": 0
+   },
+   "truth": {
+    "version": "1.5.9",
+    "count_before": 0,
+    "count_now": 0,
+    "change": "unchanged",
+    "change_by_upload": "unchanged"
+   },
+   "spec_ambiguous": false,
+   "version_list_precision": 1.0,
+   "version_list_recall": 1.0,
+   "count_matches_list": true,
+   "notes": "The release history lists no releases in the requested window. Both 1.5.9 and 1.5.8 require Python >=3.9.",
+   "unverified": []
+  },
+  {
+   "vendor": "Moss",
+   "status": "verified",
+   "package_ok": true,
+   "version_ok": true,
+   "count_ok": true,
+   "count_within_1": true,
+   "change_ok": true,
+   "reported": {
+    "version": "1.26.0",
+    "count": 22,
+    "count_key": "releases_in_window",
+    "change": "unchanged",
+    "n_versions_listed": 22
+   },
+   "truth": {
+    "version": "1.26.0",
+    "count_before": 22,
+    "count_now": 22,
+    "change": "unchanged",
+    "change_by_upload": "unchanged"
+   },
+   "spec_ambiguous": false,
+   "version_list_precision": 1.0,
+   "version_list_recall": 1.0,
+   "count_matches_list": true,
+   "notes": "The PyPI project links to moss.dev and the usemoss/moss repository. The separate moss-client project links to an Inferedge repository and was not selected.",
+   "unverified": []
+  },
+  {
+   "vendor": "Milvus (Zilliz)",
+   "status": "verified",
+   "package_ok": true,
+   "version_ok": true,
+   "count_ok": true,
+   "count_within_1": true,
+   "change_ok": true,
+   "reported": {
+    "version": "3.0.3",
+    "count": 3,
+    "count_key": "releases_in_window",
+    "change": "unchanged",
+    "n_versions_listed": 3
+   },
+   "truth": {
+    "version": "3.0.3",
+    "count_before": 3,
+    "count_now": 3,
+    "change": "unchanged",
+    "change_by_upload": "raised"
+   },
+   "spec_ambiguous": true,
+   "version_list_precision": 1.0,
+   "version_list_recall": 1.0,
+   "count_matches_list": true,
+   "notes": "The window includes 2.6.18 as well as 3.0.2 and 3.0.3. Both compared stable releases require Python >=3.9.",
+   "unverified": []
+  },
+  {
+   "vendor": "LanceDB",
+   "status": "verified",
+   "package_ok": true,
+   "version_ok": true,
+   "count_ok": true,
+   "count_within_1": true,
+   "change_ok": true,
+   "reported": {
+    "version": "0.41.0",
+    "count": 4,
+    "count_key": "releases_in_window",
+    "change": "unchanged",
+    "n_versions_listed": 4
+   },
+   "truth": {
+    "version": "0.41.0",
+    "count_before": 4,
+    "count_now": 4,
+    "change": "unchanged",
+    "change_by_upload": "unchanged"
+   },
+   "spec_ambiguous": false,
+   "version_list_precision": 1.0,
+   "version_list_recall": 1.0,
+   "count_matches_list": true,
+   "notes": "Both compared stable releases require Python >=3.10.",
+   "unverified": []
+  },
+  {
+   "vendor": "Turbopuffer",
+   "status": "verified",
+   "package_ok": true,
+   "version_ok": true,
+   "count_ok": true,
+   "count_within_1": true,
+   "change_ok": true,
+   "reported": {
+    "version": "3.1.0",
+    "count": 9,
+    "count_key": "releases_in_window",
+    "change": "unchanged",
+    "n_versions_listed": 9
+   },
+   "truth": {
+    "version": "3.1.0",
+    "count_before": 9,
+    "count_now": 9,
+    "change": "unchanged",
+    "change_by_upload": "unchanged"
+   },
+   "spec_ambiguous": false,
+   "version_list_precision": 1.0,
+   "version_list_recall": 1.0,
+   "count_matches_list": true,
+   "notes": "PyPI describes this as the official Python library for the turbopuffer API. Both compared stable releases require Python >=3.11.",
+   "unverified": []
+  }
+ ],
+ "summary_text": "Moss led release activity with 22 releases in the window, followed by Turbopuffer with 9; Pinecone had 5, and Weaviate and LanceDB had 4 each. I could not verify an official PyPI Python SDK for Zyphrelon Vector Cloud.",
+ "cost": {
+  "model_usd": 0.040794,
+  "total_usd": 0.042794,
+  "browser_usd": 0.002,
+  "traffic_usd": null
+ },
+ "steps": 21,
+ "model_calls": 28,
+ "tokens": {
+  "input": 624419,
+  "cached": 558101,
+  "output": 27234
+ }
+}

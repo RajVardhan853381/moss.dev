@@ -1,0 +1,39 @@
+{
+ "captured_utc_github": "2026-11-27T10:45:22Z",
+ "method": "GitHub 'releases/latest' page scraped live (maxAge 0). Tag shown on the page marked 'Latest'.",
+ "github": {
+  "Pinecone": {
+   "repo": "pinecone-io/python-sdk",
+   "latest_tag": "v10.3.0",
+   "title": "Release v10.3.0",
+   "published": "2026-11-03"
+  },
+  "Qdrant": {
+   "repo": "qdrant/qdrant-client",
+   "latest_tag": "v1.20.0",
+   "title": "v1.20.0",
+   "published": "2026-10-22"
+  },
+  "Weaviate": {
+   "repo": "weaviate/weaviate-python-client",
+   "latest_tag": "v4.25.0",
+   "title": "v4.25.0 - Weaviate 1.41 support",
+   "published": "2026-11-26"
+  },
+  "Chroma": {
+   "repo": "chroma-core/chroma",
+   "latest_tag": "1.5.9",
+   "title": "1.5.9",
+   "published": "2026-05-05",
+   "note": "monorepo; this release states Python 1.5.9"
+  },
+  "Moss": {
+   "repo": "usemoss/moss",
+   "latest_tag": "v0.17.0",
+   "title": "Moss iOS SDK v0.17.0",
+   "published": "2026-11-23",
+   "note": "monorepo: 'Latest' is the iOS SDK, NOT the Python SDK (PyPI moss 1.26.0)"
+  },
+  "Zyphrelon Vector Cloud": null
+ }
+}

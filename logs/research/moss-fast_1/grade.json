@@ -1,0 +1,143 @@
+{
+ "run": "moss-fast_1",
+ "status": "completed",
+ "error": null,
+ "verification": {
+  "method": "output_schema",
+  "passed": true
+ },
+ "strict_score": "30/30",
+ "lenient_score": "30/30",
+ "fake_vendor": {
+  "status": "not_found",
+  "fabricated_fields": [],
+  "passed": true,
+  "notes": "Targeted exact-name and PyPI/GitHub-restricted DuckDuckGo searches returned no matching official SDK result.",
+  "unverified": [
+   "pypi_package: Exact-name search found no matching PyPI project.",
+   "pypi_latest_version: No official Python SDK package was found.",
+   "pypi_release_date: No official Python SDK package was found.",
+   "requires_python: No official Python SDK package was found.",
+   "github_repo: Exact-name search found no matching official SDK repository.",
+   "github_latest_release_tag: No official SDK repository was found."
+  ]
+ },
+ "overconfident_rows": [],
+ "rows": [
+  {
+   "vendor": "pinecone",
+   "status": "verified",
+   "strict": "6/6",
+   "lenient": "6/6",
+   "wrong_fields": [],
+   "reported": {
+    "pypi_package": "pinecone",
+    "pypi_latest_version": "10.3.0",
+    "pypi_release_date": "2026-11-03",
+    "requires_python": "Python >=3.10",
+    "github_repo": "pinecone-io/python-sdk",
+    "github_latest_release_tag": "v10.3.0"
+   },
+   "unverified": [],
+   "notes": "PyPI's history displays Nov 2, 2026 in its local time display; its release timestamp is 2026-11-03 UTC.",
+   "sources": 3,
+   "cites_pypi": true,
+   "cites_github": true
+  },
+  {
+   "vendor": "qdrant",
+   "status": "verified",
+   "strict": "6/6",
+   "lenient": "6/6",
+   "wrong_fields": [],
+   "reported": {
+    "pypi_package": "qdrant-client",
+    "pypi_latest_version": "1.20.0",
+    "pypi_release_date": "2026-10-22",
+    "requires_python": "Python >=3.10",
+    "github_repo": "qdrant/qdrant-client",
+    "github_latest_release_tag": "v1.20.0"
+   },
+   "unverified": [],
+   "notes": "",
+   "sources": 3,
+   "cites_pypi": true,
+   "cites_github": true
+  },
+  {
+   "vendor": "weaviate",
+   "status": "verified",
+   "strict": "6/6",
+   "lenient": "6/6",
+   "wrong_fields": [],
+   "reported": {
+    "pypi_package": "weaviate-client",
+    "pypi_latest_version": "4.25.0",
+    "pypi_release_date": "2026-11-26",
+    "requires_python": ">=3.11",
+    "github_repo": "weaviate/weaviate-python-client",
+    "github_latest_release_tag": "v4.25.0"
+   },
+   "unverified": [],
+   "notes": "The PyPI project HTML page presented a CAPTCHA, so I used PyPI's opened JSON metadata endpoint; its exact requires_python value is >=3.11. The opened Weaviate docs page still named v4.24.1, while PyPI metadata and the GitHub Releases page showed v4.25.0.",
+   "sources": 3,
+   "cites_pypi": true,
+   "cites_github": true
+  },
+  {
+   "vendor": "chroma",
+   "status": "verified",
+   "strict": "6/6",
+   "lenient": "6/6",
+   "wrong_fields": [],
+   "reported": {
+    "pypi_package": "chromadb",
+    "pypi_latest_version": "1.5.9",
+    "pypi_release_date": "2026-05-05",
+    "requires_python": "Python >=3.9",
+    "github_repo": "chroma-core/chroma",
+    "github_latest_release_tag": "1.5.9"
+   },
+   "unverified": [],
+   "notes": "The Releases page also shows a separate prerelease tagged latest and labeled Latest Pre-release; stable release 1.5.9 is marked Latest.",
+   "sources": 3,
+   "cites_pypi": true,
+   "cites_github": true
+  },
+  {
+   "vendor": "moss",
+   "status": "verified",
+   "strict": "6/6",
+   "lenient": "6/6",
+   "wrong_fields": [],
+   "reported": {
+    "pypi_package": "moss",
+    "pypi_latest_version": "1.26.0",
+    "pypi_release_date": "2026-11-23",
+    "requires_python": "Python >=3.10",
+    "github_repo": "usemoss/moss",
+    "github_latest_release_tag": "v0.17.0"
+   },
+   "unverified": [],
+   "notes": "The PyPI page and Moss docs identify moss as the Python SDK. The repository's release marked Latest is v0.17.0 for the iOS SDK, not the Python SDK.",
+   "sources": 3,
+   "cites_pypi": true,
+   "cites_github": true
+  }
+ ],
+ "summary_text": "Weaviate's Python SDK has the most recent stable PyPI release among the verified vendors, version 4.25.0 on 2026-11-26, followed by Moss 1.26.0 on 2026-11-23. I could not verify an official Python SDK for Zyphrelon Vector Cloud.",
+ "as_of": "2026-11-27",
+ "cost": {
+  "model_usd": 0.035142,
+  "total_usd": 0.036809,
+  "browser_usd": 0.0016666666666666668,
+  "traffic_usd": null
+ },
+ "steps": 22,
+ "model_calls": 27,
+ "tokens": {
+  "input": 570458,
+  "cached": 509967,
+  "output": 20502
+ }
+}

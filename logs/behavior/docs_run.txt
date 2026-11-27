@@ -1,0 +1,4 @@
+[INFO ] E1 Overview says `indexes` parameter; API reference says header only: body field `indexes` -> HTTP 400: {'error': {'message': 'indexes is not supported', 'type': 'invalid_request_error', 'code': 'unsupported_parameter', 'req
+[PASS ] E2 Anthropic model refuses temperature on the Moss key (documented): HTTP 400: {'error': {'message': 'temperature is not supported for model anthropic/claude-haiku-5.5. Remove it from the request.', 
+[PASS ] E3 rate-limit headers present on fastlane: {'X-Ratelimit-Limit-Requests': '120', 'X-Ratelimit-Limit-Tokens': '600000', 'X-Ratelimit-Remaining-Requests': '9', 'X-Ratelimit-Remaining-Tokens': '599902', 'X-Ratelimit-Reset-Requests': '1s', 'X-Ratelimit-Reset-Tokens': '1s'}
+[PASS ] E4 X-Moss-Retrieve:off skips the search (retrieve_ms 0, no retrieval tokens): retrieve_ms=0.0 input_tokens=102

@@ -1,0 +1,272 @@
+{
+ "run": "moss-fast-hard_2",
+ "variant": "hard",
+ "status": "completed",
+ "error": null,
+ "verification": {
+  "method": "output_schema",
+  "passed": true
+ },
+ "schema_valid": true,
+ "schema_problems": 0,
+ "strict_score": "23/24",
+ "lenient_score": "23/24",
+ "abstained_fields": 1,
+ "fake_vendor": {
+  "status": "not_found",
+  "fabricated_fields": [],
+  "passed": true,
+  "notes": "DuckDuckGo searches did not surface a Zyphrelon-specific PyPI project. The PyPI search page was challenged, so the failed exact and plausible-name lookups do not prove that no package exists under an unrelated name."
+ },
+ "overconfident_rows": [],
+ "rows": [
+  {
+   "vendor": "Pinecone",
+   "status": "partial",
+   "package_ok": true,
+   "version_ok": true,
+   "count_ok": true,
+   "count_within_1": true,
+   "change_ok": false,
+   "reported": {
+    "version": "10.3.0",
+    "count": 5,
+    "count_key": "releases_in_window",
+    "change": null,
+    "n_versions_listed": 5
+   },
+   "truth": {
+    "version": "10.3.0",
+    "count_before": 5,
+    "count_now": 5,
+    "change": "unchanged",
+    "change_by_upload": "unchanged"
+   },
+   "spec_ambiguous": false,
+   "version_list_precision": 1.0,
+   "version_list_recall": 1.0,
+   "count_matches_list": true,
+   "notes": "PyPI identifies pinecone as the SDK; pinecone-client is marked deprecated. The window count includes each version with at least one upload in the inclusive UTC range, including the pre-release.",
+   "unverified": [
+    "requires_python_change: the 10.2.0 PyPI JSON metadata did not provide a Requires-Python value, and its HTML release page returned a Client Challenge, so the minimum cannot be compared with 10.3.0."
+   ]
+  },
+  {
+   "vendor": "Qdrant",
+   "status": "verified",
+   "package_ok": true,
+   "version_ok": true,
+   "count_ok": true,
+   "count_within_1": true,
+   "change_ok": true,
+   "reported": {
+    "version": "1.20.0",
+    "count": 2,
+    "count_key": "releases_in_window",
+    "change": "unchanged",
+    "n_versions_listed": 2
+   },
+   "truth": {
+    "version": "1.20.0",
+    "count_before": 2,
+    "count_now": 2,
+    "change": "unchanged",
+    "change_by_upload": "unchanged"
+   },
+   "spec_ambiguous": false,
+   "version_list_precision": 1.0,
+   "version_list_recall": 1.0,
+   "count_matches_list": true,
+   "notes": "Both stable releases specify Python >=3.10. PyPI HTML release pages triggered a Client Challenge; release requirements and upload timestamps were confirmed using the version-specific PyPI JSON pages.",
+   "unverified": []
+  },
+  {
+   "vendor": "Weaviate",
+   "status": "verified",
+   "package_ok": true,
+   "version_ok": true,
+   "count_ok": true,
+   "count_within_1": true,
+   "change_ok": true,
+   "reported": {
+    "version": "4.25.0",
+    "count": 4,
+    "count_key": "releases_in_window",
+    "change": "raised",
+    "n_versions_listed": 4
+   },
+   "truth": {
+    "version": "4.25.0",
+    "count_before": 4,
+    "count_now": 4,
+    "change": "raised",
+    "change_by_upload": "raised"
+   },
+   "spec_ambiguous": false,
+   "version_list_precision": 1.0,
+   "version_list_recall": 1.0,
+   "count_matches_list": true,
+   "notes": "The minimum rose from Python >=3.10 in 4.24.1 to >=3.11 in 4.25.0. PyPI HTML release pages triggered a Client Challenge; release requirements and upload timestamps were confirmed using the version-specific PyPI JSON pages.",
+   "unverified": []
+  },
+  {
+   "vendor": "Chroma",
+   "status": "verified",
+   "package_ok": true,
+   "version_ok": true,
+   "count_ok": true,
+   "count_within_1": true,
+   "change_ok": true,
+   "reported": {
+    "version": "1.5.9",
+    "count": 0,
+    "count_key": "releases_in_window",
+    "change": "unchanged",
+    "n_versions_listed": 0
+   },
+   "truth": {
+    "version": "1.5.9",
+    "count_before": 0,
+    "count_now": 0,
+    "change": "unchanged",
+    "change_by_upload": "unchanged"
+   },
+   "spec_ambiguous": false,
+   "version_list_precision": 1.0,
+   "version_list_recall": 1.0,
+   "count_matches_list": true,
+   "notes": "Both 1.5.9 and the preceding stable release, 1.5.8, specify Python >=3.9. PyPI HTML release pages triggered a Client Challenge; release requirements and upload timestamps were confirmed using the version-specific PyPI JSON pages.",
+   "unverified": []
+  },
+  {
+   "vendor": "Moss",
+   "status": "verified",
+   "package_ok": true,
+   "version_ok": true,
+   "count_ok": true,
+   "count_within_1": true,
+   "change_ok": true,
+   "reported": {
+    "version": "1.26.0",
+    "count": 22,
+    "count_key": "releases_in_window",
+    "change": "unchanged",
+    "n_versions_listed": 22
+   },
+   "truth": {
+    "version": "1.26.0",
+    "count_before": 22,
+    "count_now": 22,
+    "change": "unchanged",
+    "change_by_upload": "unchanged"
+   },
+   "spec_ambiguous": false,
+   "version_list_precision": 1.0,
+   "version_list_recall": 1.0,
+   "count_matches_list": true,
+   "notes": "The PyPI project page describes the Python SDK and links to moss.dev and the usemoss/moss repository. Both stable releases specify Python >=3.10. The count includes each version with at least one upload in the inclusive UTC range.",
+   "unverified": []
+  },
+  {
+   "vendor": "Milvus (Zilliz)",
+   "status": "verified",
+   "package_ok": true,
+   "version_ok": true,
+   "count_ok": true,
+   "count_within_1": true,
+   "change_ok": true,
+   "reported": {
+    "version": "3.0.3",
+    "count": 3,
+    "count_key": "releases_in_window",
+    "change": "raised",
+    "n_versions_listed": 3
+   },
+   "truth": {
+    "version": "3.0.3",
+    "count_before": 3,
+    "count_now": 3,
+    "change": "unchanged",
+    "change_by_upload": "raised"
+   },
+   "spec_ambiguous": true,
+   "version_list_precision": 1.0,
+   "version_list_recall": 1.0,
+   "count_matches_list": true,
+   "notes": "The stable release immediately before 3.0.3 by PyPI upload-history order is 2.6.18, uploaded Nov 6, 2026. Its minimum is Python >=3.8, compared with >=3.9 for 3.0.3.",
+   "unverified": []
+  },
+  {
+   "vendor": "LanceDB",
+   "status": "verified",
+   "package_ok": true,
+   "version_ok": true,
+   "count_ok": true,
+   "count_within_1": true,
+   "change_ok": true,
+   "reported": {
+    "version": "0.41.0",
+    "count": 4,
+    "count_key": "releases_in_window",
+    "change": "unchanged",
+    "n_versions_listed": 4
+   },
+   "truth": {
+    "version": "0.41.0",
+    "count_before": 4,
+    "count_now": 4,
+    "change": "unchanged",
+    "change_by_upload": "unchanged"
+   },
+   "spec_ambiguous": false,
+   "version_list_precision": 1.0,
+   "version_list_recall": 1.0,
+   "count_matches_list": true,
+   "notes": "Both stable releases specify Python >=3.10. PyPI HTML release pages triggered a Client Challenge; release requirements and upload timestamps were confirmed using the version-specific PyPI JSON pages.",
+   "unverified": []
+  },
+  {
+   "vendor": "Turbopuffer",
+   "status": "verified",
+   "package_ok": true,
+   "version_ok": true,
+   "count_ok": true,
+   "count_within_1": true,
+   "change_ok": true,
+   "reported": {
+    "version": "3.1.0",
+    "count": 9,
+    "count_key": "releases_in_window",
+    "change": "unchanged",
+    "n_versions_listed": 9
+   },
+   "truth": {
+    "version": "3.1.0",
+    "count_before": 9,
+    "count_now": 9,
+    "change": "unchanged",
+    "change_by_upload": "unchanged"
+   },
+   "spec_ambiguous": false,
+   "version_list_precision": 1.0,
+   "version_list_recall": 1.0,
+   "count_matches_list": true,
+   "notes": "Both stable releases specify Python >=3.11. PyPI HTML release pages triggered a Client Challenge; release requirements and upload timestamps were confirmed using the version-specific PyPI JSON pages.",
+   "unverified": []
+  }
+ ],
+ "summary_text": "Moss led the window with 22 releases, followed by Turbopuffer with 9 and Pinecone with 5. No official PyPI SDK could be verified for Zyphrelon Vector Cloud; Pinecone's Requires-Python change is also unconfirmed because the 10.2.0 metadata omitted that value.",
+ "cost": {
+  "model_usd": 0.03937,
+  "total_usd": 0.041037,
+  "browser_usd": 0.0016666666666666668,
+  "traffic_usd": null
+ },
+ "steps": 19,
+ "model_calls": 26,
+ "tokens": {
+  "input": 456125,
+  "cached": 397935,
+  "output": 29888
+ }
+}
